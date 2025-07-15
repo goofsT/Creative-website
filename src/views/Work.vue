@@ -105,7 +105,14 @@
 import { ref, computed, onMounted } from 'vue'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
-
+import cityImage from '@/assets/images/tea/VCG21gic3044108.jpg'
+import teaImage from '@/assets/images/tea/VCG41N945231298.jpg'
+import teaImage2 from '@/assets/images/tea/VCG41N1062992806.jpg'
+import teaImage3 from '@/assets/images/tea/VCG41N1157033140.jpg'
+import teaImage4 from '@/assets/images/tea/VCG41N1192944963.jpg'
+import teaImage5 from '@/assets/images/tea/VCG41N1295528631.jpg'
+import teaImage6 from '@/assets/images/tea/VCG211186850243.jpg'
+import teaImage7 from '@/assets/images/tea/VCG212d5d059b8.jpg'
 gsap.registerPlugin(ScrollTrigger)
 
 // 分类数据
@@ -123,19 +130,19 @@ const projects = ref([
     title: '未来城市概念',
     category: '概念设计',
     categoryId: 'concept',
-    image: '/images/work-1.jpg',
+    image: cityImage,
     description: '这个项目展示了我们对未来城市的愿景，融合了可持续发展理念和先进技术。我们设计了垂直花园、空中交通系统和自给自足的社区空间，创造一个和谐的未来都市景观。',
     client: '未来城市规划局',
     date: '2025',
     services: '概念设计, 3D建模, 视觉效果',
-    gallery: ['/images/work-1-1.jpg', '/images/work-1-2.jpg', '/images/work-1-3.jpg']
+    gallery: [teaImage, teaImage2, teaImage3]
   },
   {
     id: 2,
     title: '交通工具设计',
     category: '工业设计',
     categoryId: 'industrial',
-    image: '/images/work-2.jpg',
+    image: teaImage,
     description: '这款概念交通工具采用电动推进系统和自动驾驶技术，为未来城市提供高效、环保的交通解决方案。其流线型设计不仅美观，还能最大限度地提高能源效率。',
     client: '新能源交通公司',
     date: '2024',
@@ -147,7 +154,7 @@ const projects = ref([
     title: '太空殖民地',
     category: '未来主义',
     categoryId: 'futuristic',
-    image: '/images/work-3.jpg',
+    image: teaImage2,
     description: '这个项目探索了人类在其他星球上建立殖民地的可能性。我们设计了模块化居住单元、资源提取设施和生态系统，创造一个可持续的外星生活环境。',
     client: '太空探索机构',
     date: '2026',
@@ -159,7 +166,7 @@ const projects = ref([
     title: '水下研究站',
     category: '环境设计',
     categoryId: 'environment',
-    image: '/images/work-4.jpg',
+    image: teaImage3,
     description: '这个水下研究站设计用于深海科学研究和海洋资源勘探。其结构能够承受极端水压，同时为研究人员提供舒适的生活和工作环境。',
     client: '海洋研究所',
     date: '2025',
@@ -171,7 +178,7 @@ const projects = ref([
     title: '智能家居系统',
     category: '工业设计',
     categoryId: 'industrial',
-    image: '/images/work-5.jpg',
+    image: teaImage4,
     description: '这套智能家居系统整合了人工智能、物联网和可再生能源技术，为用户提供高效、便捷、环保的生活体验。系统可以根据用户习惯自动调节环境参数，优化能源使用。',
     client: '智能生活科技公司',
     date: '2024',
@@ -183,7 +190,31 @@ const projects = ref([
     title: '生态城市规划',
     category: '环境设计',
     categoryId: 'environment',
-    image: '/images/work-6.jpg',
+    image: teaImage5,
+    description: '这个生态城市规划项目旨在创建一个与自然和谐共存的城市环境。我们设计了绿色走廊、雨水收集系统和可再生能源设施，最大限度地减少城市对环境的影响。',
+    client: '可持续发展委员会',
+    date: '2025',
+    services: '城市规划, 景观设计, 环境工程',
+    gallery: ['/images/work-6-1.jpg', '/images/work-6-2.jpg', '/images/work-6-3.jpg']
+  },
+  {
+    id: 7,
+    title: '生态城市规划',
+    category: '环境设计',
+    categoryId: 'environment',
+    image: teaImage6,
+    description: '这个生态城市规划项目旨在创建一个与自然和谐共存的城市环境。我们设计了绿色走廊、雨水收集系统和可再生能源设施，最大限度地减少城市对环境的影响。',
+    client: '可持续发展委员会',
+    date: '2025',
+    services: '城市规划, 景观设计, 环境工程',
+    gallery: ['/images/work-6-1.jpg', '/images/work-6-2.jpg', '/images/work-6-3.jpg']
+  },
+  {
+    id: 8,
+    title: '生态城市规划',
+    category: '环境设计',
+    categoryId: 'environment',
+    image: teaImage7,
     description: '这个生态城市规划项目旨在创建一个与自然和谐共存的城市环境。我们设计了绿色走廊、雨水收集系统和可再生能源设施，最大限度地减少城市对环境的影响。',
     client: '可持续发展委员会',
     date: '2025',

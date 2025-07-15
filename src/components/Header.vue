@@ -4,7 +4,7 @@
       <div class="header__content">
         <div class="header__logo">
           <router-link to="/">
-            <h1>创意<span>设计</span></h1>
+            <h1>富硒<span>茶</span></h1>
           </router-link>
         </div>
         

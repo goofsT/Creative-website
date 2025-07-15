@@ -1,11 +1,16 @@
 <template>
   <div class="home">
-    <!-- 英雄区域 -->
+    <div class="video-container">
+      <video class="hero__video" autoplay muted loop playsinline>
+        <source src="@/assets/mv/take_tea.mp4" type="video/mp4">
+      </video>
+    </div>
     <section class="hero">
+      
       <div class="hero__content">
-        <h1>创意<span>设计</span></h1>
-        <h2>视觉未来主义者</h2>
-        <p>我们将未来的视觉概念带入现实，创造令人惊叹的设计体验</p>
+        <h1>茶叶<span class="color-red">恩施</span></h1>
+        <h2>天赐恩山好水，天然富硒滋养</h2>
+        <p>—— 高山云雾 · 原生态手工茶 ——</p>
         <div class="hero__buttons">
           <router-link to="/work" class="btn">探索作品</router-link>
           <router-link to="/contact" class="btn btn--outline">联系我们</router-link>
@@ -21,7 +26,7 @@
     <section class="announcements">
       <div class="container">
         <h2>最新<span>公告</span></h2>
-        <div class="announcements__grid">
+        <div class="flex gap-4 justify-between">
           <div class="announcement-card">
             <h3>当前展览</h3>
             <h4>赛博朋克：通过电影展望可能的未来</h4>
@@ -100,6 +105,18 @@ const subscribeNewsletter = () => {
 }
 
 onMounted(() => {
+  // 视频滚动视差效果
+  gsap.to('.video-container', {
+    scrollTrigger: {
+      trigger: '.home',
+      start: 'top top',
+      end: 'bottom top',
+      scrub: true
+    },
+    y: 200, // 滚动时视频向下移动的距离，可以调整
+    scale: 1.1 // 滚动时视频略微放大，可以调整
+  })
+
   // 英雄区域动画
   const heroTimeline = gsap.timeline()
   heroTimeline.from('.hero__content h1', { y: 50, opacity: 0, duration: 1 })
@@ -122,11 +139,13 @@ onMounted(() => {
   gsap.from('.announcement-card', {
     scrollTrigger: {
       trigger: '.announcements__grid',
-      start: 'top 80%',
+      start: 'top 90%',
+      markers: false, 
+      toggleActions: 'play none none none' 
     },
     y: 50,
     opacity: 0,
-    stagger: 0.2,
+    stagger: 0.01,
     duration: 0.8
   })
 
@@ -178,6 +197,32 @@ onMounted(() => {
   overflow-x: hidden;
 }
 
+.video-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: -1;
+  overflow: hidden;
+  
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+  }
+}
+
+.hero__video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
 // 英雄区域
 .hero {
   height: 100vh;
@@ -187,15 +232,15 @@ onMounted(() => {
   align-items: center;
   text-align: center;
   position: relative;
-  background-color: var(--color-bg);
-  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('/images/hero-bg.jpg');
-  background-size: cover;
-  background-position: center;
+  background-color: transparent;
   color: var(--color-text);
   padding: 2rem;
+  overflow: hidden;
   
   &__content {
     max-width: 800px;
+    position: relative;
+    z-index: 1;
     
     h1 {
       font-size: 5rem;
@@ -330,10 +375,13 @@ onMounted(() => {
   border: 1px solid rgba(255, 255, 255, 0.1);
   padding: 2rem;
   border-radius: 5px;
+  width: 40%;
   transition: var(--transition);
+  backdrop-filter: blur(6px);
   
   &:hover {
     transform: translateY(-5px);
+    border:1px solid rgb(24, 94, 24);
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
   }
   
@@ -362,7 +410,8 @@ onMounted(() => {
 // 引用区域
 .quote {
   padding: 6rem 0;
-  background-color: var(--color-secondary);
+  background-color: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(8px);
   
   blockquote {
     max-width: 800px;
