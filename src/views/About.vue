@@ -3,7 +3,7 @@
     <!-- 页面标题 -->
     <section class="page-header">
       <div class="container">
-        <h1>关于<span>我们</span></h1>
+        <h1>关于<span>产品</span></h1>
       </div>
     </section>
     
@@ -12,14 +12,13 @@
       <div class="container">
         <div class="about-content__grid">
           <div class="about-content__text">
-            <h2>视觉<span>未来主义者</span></h2>
-            <p>我们是一家专注于未来视觉概念设计的创意工作室。我们的作品跨越电影、游戏、建筑和产品设计等多个领域，为客户提供前瞻性的视觉解决方案。</p>
-            <p>自成立以来，我们一直致力于将科幻概念与实用设计相结合，创造出既有未来感又具有可行性的作品。我们相信，好的设计不仅仅是美观的，还应该是有意义的、有目的的。</p>
-            <p>我们的团队由来自全球各地的设计师、艺术家和技术专家组成，他们带来了丰富多样的视角和经验。这种多元化使我们能够应对各种挑战，并为客户提供独特而创新的解决方案。</p>
-            <blockquote>
-              <p>"我称科幻为'提前实现的现实'"</p>
-            </blockquote>
-            <p>这句话体现了我们的核心理念：今天的想象就是明天的现实。我们的设计不仅仅是幻想，而是对未来可能性的探索和预见。</p>
+            <h2>恩施<span>富硒茶</span></h2>
+            <p class="">恩施富硒茶以恩施玉露最为著名。产于著名的鄂西南武陵山茶区，绿林翠峰、伍家台绿针、恩施玉露、雾洞贡羽、极叶高山野茶是恩施富硒茶的佼佼者。湖北恩施是世界硒都，土壤中富含硒元素，恩施茶为天赐的富硒茶，深受茶人喜爱，日本人尤其钟爱。恩施富硒茶富含茶多酚、儿茶素、茶红素、生物碱以及多种维生素与氨基酸等营养成份，更含有人体必需的硒、锌等微量元素，具有清心明目、滋润暖胃、助消化、安神养颜及消炎等多重保健功效。</p>
+            <div  v-for="item in cagegory" :key="item.name">
+              <blockquote>
+                <p>{{item.name}}</p>
+              </blockquote> 
+            </div>
           </div>
           <div class="about-content__image">
             <div class="image-container">
@@ -29,56 +28,86 @@
         </div>
       </div>
     </section>
-    
-    <!-- 我们的方法 -->
+
+
+     <!-- 我们的方法 -->
     <section class="methodology">
       <div class="container">
-        <h2>我们的<span>方法</span></h2>
+        <h2>茶<span>功效</span></h2>
         <div class="methodology__grid">
           <div class="methodology-card">
             <div class="methodology-card__icon">
               <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path><line x1="2" y1="12" x2="22" y2="12"></line></svg>
             </div>
-            <h3>研究与探索</h3>
-            <p>我们深入研究科技趋势、社会变化和设计理论，为我们的创意过程提供坚实的基础。</p>
+            <h3>抗氧化</h3>
+            <p>富硒茶抗氧化能力强，能清除水中污染毒素，增强免疫力，解毒、排毒，保护肝脏，防止糖尿病、白内障等，隔夜茶能够饮用。</p>
           </div>
           <div class="methodology-card">
             <div class="methodology-card__icon">
               <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19l7-7 3 3-7 7-3-3z"></path><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"></path><path d="M2 2l7.586 7.586"></path><circle cx="11" cy="11" r="2"></circle></svg>
             </div>
-            <h3>概念发展</h3>
-            <p>我们将想法转化为概念草图，然后通过迭代和反馈不断完善，直到达到最佳效果。</p>
+            <h3>风味</h3>
+            <p>富硒茶温、凉、冰均可饮用，此茶浓、苦而不涩，后口甘甜；淡，清香爽口。</p>
           </div>
           <div class="methodology-card">
             <div class="methodology-card__icon">
               <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
             </div>
-            <h3>视觉实现</h3>
-            <p>我们使用最先进的工具和技术，将概念转化为令人惊叹的视觉作品，包括插画、3D模型和动画。</p>
-          </div>
-          <div class="methodology-card">
-            <div class="methodology-card__icon">
-              <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg>
-            </div>
-            <h3>展示与叙事</h3>
-            <p>我们不仅创造视觉效果，还讲述故事，让每个项目都有情感共鸣和深层含义。</p>
+            <h3>安神助眠</h3>
+            <p>富硒茶具有安神作用，因此饮用此茶不会导致失眠。</p>
           </div>
         </div>
       </div>
     </section>
+
+
+<!-- 硒元素介绍 -->
+<section class="methodology selenium-section">
+  <div class="container">
+    <h2>硒<span>元素</span></h2>
+    <div class="methodology-card">
+      <div class="methodology-card__icon">
+        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg>
+      </div>
+      <h3>抗癌症之王</h3>
+      <p>微量元素硒，被世界卫生组织公认为"抗癌之王"、"长寿之星"，在美国，由克拉克教授进行的大型人体临床试验结果显示：补充硒可以预防肿瘤，这项试验被人们称为"硒防癌里程碑的试验"。
+        试验结果表明：每日补充 200微克硒，癌症发病率和死亡率都有显著降低，其中肺癌、前列腺癌、结直肠癌发病率的降低最为明显，达 50% 以上。
+      </p>
+      <p>美国亚利桑那大学癌症中心的Clark教授等在美国进行了为期13年的科研攻关和试验证实，该项实验符合严格的科学标准，试验在7家临床中心进行，结果发现：
+
+每日补充200微克硒，癌症发生率下降50%、癌症总死亡率下降37%。
+
+其中有3种癌症的发病率下降最为明显：前列腺癌下降63%、结直肠癌下降58%、肺癌下降46%。</p>
+      <p>
+        2003年9月美国食品药品管理局（FDA）批准了一项重大决定，即认为硒为抑癌剂，并允许硒营养食品标明的抑癌性质。FDA可以做出以下含含义声明：
+
+硒可能降低某些癌症的发生风险；
+
+一些科学证据表明摄取硒较少的人体内产生抗癌作用；
+
+一些试验结果表明摄取硒较高的人体内产生抗癌症作用。
+      </p>
+
+      <p>
+        在中国，硒有防癌抗癌作用已被写入化学教材（《人教版九年级化学第九单元》）以及高等院校生物教材（《微量元素与人体健康》第262页）："硒能抑制细胞生长以及DNA、RNA和蛋白质合成，抑制癌细胞转移，干扰癌症物质代谢"。
+      </p>
+    </div>
+  </div>
+</section>
+    
     
     <!-- 团队成员 -->
     <section class="team">
       <div class="container">
         <h2>我们的<span>团队</span></h2>
         <div class="team__grid">
-          <div class="team-member" v-for="i in 4" :key="i">
+          <div class="team-member" v-for="(member, index) in teamMembers" :key="index">
             <div class="team-member__image">
-              <img :src="`/images/team-${i}.jpg`" :alt="`团队成员 ${i}`" />
+              <img :src="`/images/team-${index + 1}.jpg`" :alt="`${member.name}`" />
             </div>
             <div class="team-member__info">
-              <h3>设计师 {{ i }}</h3>
-              <p>创意总监 / 概念艺术家</p>
+              <h3>{{ member.name }}</h3>
+              <p>{{ member.position }}</p>
               <div class="team-member__social">
                 <a href="#" aria-label="Instagram">
                   <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
@@ -96,10 +125,11 @@
     <!-- 客户与合作伙伴 -->
     <section class="clients">
       <div class="container">
-        <h2>我们的<span>客户</span></h2>
+        <h2>我们的<span>合作伙伴</span></h2>
         <div class="clients__logos">
-          <div class="client-logo" v-for="i in 6" :key="i">
-            <img :src="`/images/client-${i}.png`" :alt="`客户 ${i}`" />
+          <div class="client-logo" v-for="(partner, index) in partners" :key="index">
+            <img :src="`/images/client-${index + 1}.png`" :alt="`${partner.name}`" />
+            <span class="client-name">{{ partner.name }}</span>
           </div>
         </div>
       </div>
@@ -109,8 +139,8 @@
     <section class="cta">
       <div class="container">
         <div class="cta__content">
-          <h2>准备好<span>合作</span>了吗？</h2>
-          <p>我们期待与您一起创造未来的视觉体验。</p>
+          <h2>品味<span>好茶</span>，从这里开始</h2>
+          <p>我们期待与您分享恩施富硒茶的独特风味与健康价值。</p>
           <router-link to="/contact" class="btn">联系我们</router-link>
         </div>
       </div>
@@ -124,6 +154,31 @@ import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
 gsap.registerPlugin(ScrollTrigger)
+
+const cagegory=[
+  {name:'绿林翠峰',desc:'由鹤峰县绿林茶场生产'},
+  {name:'伍家台绿针',desc:'由恩施市伍家台富硒茶业有限公司生产'},
+  {name:'恩施玉露',desc:'由恩施市玉露茶业有限公司生产'},
+  {name:'雾洞绿峰',desc:'由利川市雾洞茶厂生产'},
+  {name:'极叶高山野茶',desc:'由恩施市极叶高山茶业有限公司生产'},
+  {name:'恩施富硒茶',desc:'由恩施市富硒茶业有限公司生产'},
+]
+
+const teamMembers = [
+  { name: '张三', position: '茶叶品鉴师 / 茶叶专家' },
+  { name: '李四', position: '茶叶种植专家 / 茶叶研究员' },
+  { name: '王五', position: '茶叶加工工艺师 / 茶叶工程师' },
+  { name: '赵六', position: '茶叶市场营销专家 / 茶叶分析师' },
+]
+
+const partners = [
+  { name: '恩施市玉露茶业有限公司' },
+  { name: '鹤峰县绿林茶场' },
+  { name: '恩施市伍家台富硒茶业有限公司' },
+  { name: '利川市雾洞茶厂' },
+  { name: '恩施市极叶高山茶业有限公司' },
+  { name: '恩施市富硒茶业有限公司' },
+]
 
 onMounted(() => {
   // 页面标题动画
@@ -475,14 +530,17 @@ onMounted(() => {
   }
 }
 
+// 客户logo
 .client-logo {
   width: 150px;
   height: 80px;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   opacity: 0.6;
   transition: var(--transition);
+  margin-bottom: 1.5rem;
   
   &:hover {
     opacity: 1;
@@ -492,6 +550,16 @@ onMounted(() => {
     max-width: 100%;
     max-height: 100%;
     filter: brightness(0) invert(1);
+    margin-bottom: 0.5rem;
+  }
+  
+  .client-name {
+    font-size: 0.8rem;
+    text-align: center;
+    max-width: 120px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 }
 
@@ -533,6 +601,27 @@ onMounted(() => {
     .btn {
       padding: 1rem 3rem;
       font-size: 1.1rem;
+    }
+  }
+}
+
+// 硒元素部分特殊样式
+.selenium-section {
+  background-color: rgba(0, 0, 0, 0.03);
+  
+  .methodology-card {
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: left;
+    
+    p {
+      margin-bottom: 1.5rem;
+      line-height: 1.8;
+      text-indent: 2em;
+      
+      &:last-child {
+        margin-bottom: 0;
+      }
     }
   }
 }
