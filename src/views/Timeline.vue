@@ -3,19 +3,22 @@
     <!-- 页面标题 -->
     <section class="page-header">
       <div class="container">
-        <h1>时间<span>线</span></h1>
+        <h1>茶叶<span>制作过程</span></h1>
       </div>
     </section>
     
     <!-- 时间线内容 -->
     <section class="timeline-content">
       <div class="container">
+        <!-- 绿茶制作过程 -->
+        <h2 class="tea-type-title">绿茶<span>制作工艺</span></h2>
+        
         <div class="timeline__wrapper">
           <div class="timeline__line"></div>
           
           <div 
-            v-for="(item, index) in timelineItems" 
-            :key="index" 
+            v-for="(item, index) in greenTeaItems" 
+            :key="'green-'+index" 
             class="timeline-item"
             :class="{ 'timeline-item--right': index % 2 !== 0 }"
           >
@@ -29,7 +32,41 @@
               </div>
               
               <div class="timeline-item__achievements" v-if="item.achievements && item.achievements.length">
-                <h4>主要成就</h4>
+                <h4>主要工艺要点</h4>
+                <ul>
+                  <li v-for="(achievement, i) in item.achievements" :key="i">
+                    {{ achievement }}
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="timeline-item__dot"></div>
+          </div>
+        </div>
+        
+        <!-- 红茶制作过程 -->
+        <h2 class="tea-type-title">红茶<span>制作工艺</span></h2>
+        
+        <div class="timeline__wrapper">
+          <div class="timeline__line"></div>
+          
+          <div 
+            v-for="(item, index) in blackTeaItems" 
+            :key="'black-'+index" 
+            class="timeline-item"
+            :class="{ 'timeline-item--right': index % 2 !== 0 }"
+          >
+            <div class="timeline-item__content">
+              <div class="timeline-item__year">{{ item.year }}</div>
+              <h3>{{ item.title }}</h3>
+              <p>{{ item.description }}</p>
+              
+              <div class="timeline-item__image" v-if="item.image">
+                <img :src="item.image" :alt="item.title" />
+              </div>
+              
+              <div class="timeline-item__achievements" v-if="item.achievements && item.achievements.length">
+                <h4>主要工艺要点</h4>
                 <ul>
                   <li v-for="(achievement, i) in item.achievements" :key="i">
                     {{ achievement }}
@@ -46,15 +83,15 @@
     <!-- 未来展望 -->
     <section class="future-vision">
       <div class="container">
-        <h2>未来<span>展望</span></h2>
+        <h2>茶文化<span>传承</span></h2>
         <div class="future-vision__content">
           <div class="future-vision__text">
-            <p>我们的旅程仍在继续。随着技术的进步和社会的发展，我们将继续探索设计的新边界，创造更加令人惊叹的视觉体验。</p>
-            <p>我们期待着与您一起，共同创造未来的视觉语言。</p>
-            <router-link to="/contact" class="btn">与我们合作</router-link>
+            <p>富硒茶的制作工艺凝聚了数百年的智慧结晶，我们致力于将这一传统工艺与现代科技相结合，创造更健康、更优质的茶叶产品。</p>
+            <p>我们期待与您一起，品味自然馈赠的健康茶饮，共同传承中华茶文化。</p>
+            <router-link to="/contact" class="btn">联系我们</router-link>
           </div>
           <div class="future-vision__image">
-            <img src="/images/future-vision.jpg" alt="未来展望" />
+            <img src="/src/assets/images/tea/tea-cup.jpg" alt="茶文化传承" />
           </div>
         </div>
       </div>
@@ -69,75 +106,115 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
 gsap.registerPlugin(ScrollTrigger)
 
-// 时间线数据
-const timelineItems = ref([
+// 绿茶时间线数据
+const greenTeaItems = ref([
   {
-    year: '2020',
-    title: '创立初期',
-    description: '我们的创意工作室在这一年成立，由一群充满激情的设计师和艺术家组成，致力于探索未来视觉概念。',
-    image: '/images/timeline-1.jpg',
+    year: '第一步',
+    title: '鲜叶采摘',
+    description: '富硒绿茶的制作始于精心采摘。采茶工人在清晨露水未干时采摘一芽一叶或一芽二叶的嫩芽，确保茶叶品质的基础。富硒土壤培育的茶树，其叶片含有丰富的硒元素，对人体健康极为有益。',
+    image: '/src/assets/images/tea/tea-plantation.jpg',
     achievements: [
-      '成立创意工作室',
-      '完成首个概念设计项目',
-      '建立核心设计团队'
+      '选择富硒土壤区域的茶园',
+      '严格把控采摘标准',
+      '保持鲜叶完整度'
     ]
   },
   {
-    year: '2021',
-    title: '扩展与成长',
-    description: '随着项目的增加，我们的团队逐渐扩大，并开始与国际客户合作，将我们的设计理念带到全球舞台。',
-    image: '/images/timeline-2.jpg',
+    year: '第二步',
+    title: '杀青工艺',
+    description: '绿茶制作的关键步骤是杀青，通过高温迅速破坏茶叶中的酶活性，阻止氧化，保留茶叶的绿色和鲜爽。杀青通常采用锅炒或蒸汽方式，温度控制在120-130℃，时间约为3-5分钟。',
+    image: '/src/assets/images/tea/VCG211244284652.png',
     achievements: [
-      '团队规模扩大至15人',
-      '首次国际合作项目',
-      '建立专业3D建模部门'
+      '精准控制杀青温度',
+      '掌握茶叶变化状态',
+      '保留茶叶中的有效成分'
     ]
   },
   {
-    year: '2022',
-    title: '技术突破',
-    description: '这一年，我们在技术方面取得了重大突破，开发了专有的设计工具和渲染技术，大大提高了工作效率和作品质量。',
-    image: '/images/timeline-3.jpg',
+    year: '第三步',
+    title: '揉捻成型',
+    description: '杀青后的茶叶需要通过揉捻使其成型。揉捻过程使茶叶卷曲成条形或珠形，同时促进茶汁外溢，增强茶叶风味。绿茶的揉捻力度较轻，以保持茶叶的自然形态。',
+    image: '/src/assets/images/tea/VCG211319770239.jpg',
     achievements: [
-      '开发专有设计工具',
-      '改进渲染技术',
-      '获得技术创新奖'
+      '控制揉捻力度和时间',
+      '形成特色茶形',
+      '保持茶叶完整性'
     ]
   },
   {
-    year: '2023',
-    title: '行业认可',
-    description: '我们的努力得到了行业的认可，多个项目获得国际设计大奖，并被知名媒体报道，提高了工作室的知名度和影响力。',
-    image: '/images/timeline-4.jpg',
+    year: '第四步',
+    title: '烘干精制',
+    description: '最后一步是烘干，将茶叶中的水分降至5%以下，确保茶叶可以长期保存。绿茶烘干温度一般控制在80-100℃，烘干过程还能进一步形成茶叶的香气。烘干后的茶叶经过筛选、分级、包装，成为最终的富硒绿茶产品。',
+    image: '/src/assets/images/tea/VCG211522801755.png',
     achievements: [
-      '获得国际设计大奖',
-      '媒体广泛报道',
-      '与顶级品牌建立合作关系'
-    ]
-  },
-  {
-    year: '2024',
-    title: '全球扩张',
-    description: '为了更好地服务全球客户，我们在多个国家设立了办事处，并继续扩大团队规模，吸引更多优秀的创意人才加入。',
-    image: '/images/timeline-5.jpg',
-    achievements: [
-      '在三个国家设立办事处',
-      '团队规模扩大至50人',
-      '完成20个大型项目'
-    ]
-  },
-  {
-    year: '2025',
-    title: '创新与未来',
-    description: '展望未来，我们将继续推动设计边界，探索新技术和新方法，为客户创造更加惊艳的视觉体验和解决方案。',
-    image: '/images/timeline-6.jpg',
-    achievements: [
-      '启动研发新一代设计工具',
-      '成立未来设计研究院',
-      '发布《未来视觉设计趋势》报告'
+      '控制烘干温度曲线',
+      '确保茶叶均匀干燥',
+      '精细分级包装'
     ]
   }
 ])
+
+// 红茶时间线数据
+const blackTeaItems = ref([
+  {
+    year: '第一步',
+    title: '鲜叶采摘',
+    description: '富硒红茶的制作同样始于精心采摘。红茶一般采摘一芽二叶或一芽三叶，相比绿茶可以采用稍成熟的叶片。富硒土壤培育的茶树所产茶叶，富含硒元素，具有更高的营养价值。',
+    image: '/src/assets/images/tea/pexels-anna-pou-8330364.jpg',
+    achievements: [
+      '选择富硒土壤茶园',
+      '采摘适合制作红茶的茶叶',
+      '确保鲜叶质量'
+    ]
+  },
+  {
+    year: '第二步',
+    title: '萎凋工艺',
+    description: '红茶制作中萎凋是非常重要的步骤。采摘的鲜叶需要铺放在萎凋槽中，在适宜的温度和湿度下进行12-18小时的萎凋。这一过程中，茶叶失去部分水分，叶片变软，为后续发酵做准备。',
+    image: '/src/assets/images/tea/VCG211186850243.jpg',
+    achievements: [
+      '控制萎凋环境温湿度',
+      '定期翻动茶叶确保均匀萎凋',
+      '判断萎凋程度的适宜性'
+    ]
+  },
+  {
+    year: '第三步',
+    title: '揉捻破碎',
+    description: '萎凋后的茶叶需要进行揉捻，这一步骤会破坏茶叶细胞组织，使茶多酚与氧气充分接触，为后续发酵创造条件。红茶的揉捻力度较大，时间也较长，以充分破坏叶片组织。',
+    image: '/src/assets/images/tea/VCG211574899634.jpg',
+    achievements: [
+      '控制揉捻力度和时间',
+      '确保茶叶细胞充分破碎',
+      '促进茶汁外溢'
+    ]
+  },
+  {
+    year: '第四步',
+    title: '发酵工艺',
+    description: '红茶制作的特色在于发酵过程。揉捻后的茶叶在适宜的温湿度环境下进行氧化发酵，茶多酚在酶的作用下氧化为茶黄素、茶红素等物质，形成红茶特有的色泽、香气和滋味。',
+    image: '/src/assets/images/tea/VCG211514259609.jpg',
+    achievements: [
+      '控制发酵环境',
+      '监测发酵程度',
+      '把握最佳发酵时间点'
+    ]
+  },
+  {
+    year: '第五步',
+    title: '烘干精制',
+    description: '发酵完成后，需要通过烘干停止发酵过程并降低茶叶水分含量。红茶烘干温度一般为80-90℃，烘干过程还能进一步形成红茶特有的香气。烘干后的茶叶经过筛选、分级、包装，成为最终的富硒红茶产品。',
+    image: '/src/assets/images/tea/VCG211522801789.png',
+    achievements: [
+      '控制烘干温度和时间',
+      '确保茶叶均匀干燥',
+      '精细分级包装'
+    ]
+  }
+])
+
+// 原有的timelineItems不再使用，但保留以备不时之需
+const timelineItems = ref([])
 
 onMounted(() => {
   // 页面标题动画
@@ -147,16 +224,31 @@ onMounted(() => {
     duration: 1 
   })
   
-  // 时间线动画
-  gsap.from('.timeline__line', {
+  // 茶类标题动画
+  gsap.from('.tea-type-title', {
     scrollTrigger: {
-      trigger: '.timeline__wrapper',
+      trigger: '.tea-type-title',
       start: 'top 80%',
-      end: 'bottom 20%',
-      scrub: true
     },
-    scaleY: 0,
-    transformOrigin: 'top center'
+    y: 30,
+    opacity: 0,
+    duration: 0.8,
+    stagger: 0.5
+  })
+  
+  // 时间线动画
+  const timelineLines = document.querySelectorAll('.timeline__line')
+  timelineLines.forEach((line) => {
+    gsap.from(line, {
+      scrollTrigger: {
+        trigger: line.parentElement,
+        start: 'top 80%',
+        end: 'bottom 20%',
+        scrub: true
+      },
+      scaleY: 0,
+      transformOrigin: 'top center'
+    })
   })
   
   // 时间线项目动画
@@ -467,6 +559,21 @@ onMounted(() => {
       height: auto;
       display: block;
     }
+  }
+}
+
+// 茶类标题
+.tea-type-title {
+  text-align: center;
+  margin: 4rem 0 2rem;
+  font-size: 2.5rem;
+  
+  span {
+    color: var(--color-accent);
+  }
+  
+  @media (max-width: 768px) {
+    font-size: 2rem;
   }
 }
 </style> 

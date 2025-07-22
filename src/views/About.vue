@@ -14,10 +14,13 @@
           <div class="about-content__text">
             <h2>恩施<span>富硒茶</span></h2>
             <p class="">恩施富硒茶以恩施玉露最为著名。产于著名的鄂西南武陵山茶区，绿林翠峰、伍家台绿针、恩施玉露、雾洞贡羽、极叶高山野茶是恩施富硒茶的佼佼者。湖北恩施是世界硒都，土壤中富含硒元素，恩施茶为天赐的富硒茶，深受茶人喜爱，日本人尤其钟爱。恩施富硒茶富含茶多酚、儿茶素、茶红素、生物碱以及多种维生素与氨基酸等营养成份，更含有人体必需的硒、锌等微量元素，具有清心明目、滋润暖胃、助消化、安神养颜及消炎等多重保健功效。</p>
-            <div  v-for="item in cagegory" :key="item.name">
-              <blockquote>
-                <p>{{item.name}}</p>
-              </blockquote> 
+            <div class="tea-categories">
+              <h4>恩施富硒茶主要品类</h4>
+              <ul>
+                <li v-for="item in cagegory" :key="item.name">
+                  <strong>{{ item.name }}</strong> - {{ item.desc }}
+                </li>
+              </ul>
             </div>
           </div>
           <div class="about-content__image">
@@ -29,111 +32,118 @@
       </div>
     </section>
 
-
-     <!-- 我们的方法 -->
-    <section class="methodology">
-      <div class="container">
-        <h2>茶<span>功效</span></h2>
-        <div class="methodology__grid">
-          <div class="methodology-card">
-            <div class="methodology-card__icon">
-              <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path><line x1="2" y1="12" x2="22" y2="12"></line></svg>
-            </div>
-            <h3>抗氧化</h3>
-            <p>富硒茶抗氧化能力强，能清除水中污染毒素，增强免疫力，解毒、排毒，保护肝脏，防止糖尿病、白内障等，隔夜茶能够饮用。</p>
-          </div>
-          <div class="methodology-card">
-            <div class="methodology-card__icon">
-              <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19l7-7 3 3-7 7-3-3z"></path><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"></path><path d="M2 2l7.586 7.586"></path><circle cx="11" cy="11" r="2"></circle></svg>
-            </div>
-            <h3>风味</h3>
-            <p>富硒茶温、凉、冰均可饮用，此茶浓、苦而不涩，后口甘甜；淡，清香爽口。</p>
-          </div>
-          <div class="methodology-card">
-            <div class="methodology-card__icon">
-              <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
-            </div>
-            <h3>安神助眠</h3>
-            <p>富硒茶具有安神作用，因此饮用此茶不会导致失眠。</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-
-<!-- 硒元素介绍 -->
-<section class="methodology selenium-section">
+<!-- 含硒量对比研究 -->
+<section class="selenium-comparison">
   <div class="container">
-    <h2>硒<span>元素</span></h2>
-    <div class="methodology-card">
-      <div class="methodology-card__icon">
-        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg>
+    <h2>硒元素<span>研究</span></h2>
+    <div class="comparison-content">
+      <div class="comparison-text">
+        <p>根据湖北省农业科学院茶叶研究所与恩施州农业科学院联合进行的研究表明，恩施富硒茶的含硒量远高于普通茶叶。以下是恩施富硒茶与其他主要产茶区茶叶的含硒量对比：</p>
       </div>
-      <h3>抗癌症之王</h3>
-      <p>微量元素硒，被世界卫生组织公认为"抗癌之王"、"长寿之星"，在美国，由克拉克教授进行的大型人体临床试验结果显示：补充硒可以预防肿瘤，这项试验被人们称为"硒防癌里程碑的试验"。
-        试验结果表明：每日补充 200微克硒，癌症发病率和死亡率都有显著降低，其中肺癌、前列腺癌、结直肠癌发病率的降低最为明显，达 50% 以上。
-      </p>
-      <p>美国亚利桑那大学癌症中心的Clark教授等在美国进行了为期13年的科研攻关和试验证实，该项实验符合严格的科学标准，试验在7家临床中心进行，结果发现：
-
-每日补充200微克硒，癌症发生率下降50%、癌症总死亡率下降37%。
-
-其中有3种癌症的发病率下降最为明显：前列腺癌下降63%、结直肠癌下降58%、肺癌下降46%。</p>
-      <p>
-        2003年9月美国食品药品管理局（FDA）批准了一项重大决定，即认为硒为抑癌剂，并允许硒营养食品标明的抑癌性质。FDA可以做出以下含含义声明：
-
-硒可能降低某些癌症的发生风险；
-
-一些科学证据表明摄取硒较少的人体内产生抗癌作用；
-
-一些试验结果表明摄取硒较高的人体内产生抗癌症作用。
-      </p>
-
-      <p>
-        在中国，硒有防癌抗癌作用已被写入化学教材（《人教版九年级化学第九单元》）以及高等院校生物教材（《微量元素与人体健康》第262页）："硒能抑制细胞生长以及DNA、RNA和蛋白质合成，抑制癌细胞转移，干扰癌症物质代谢"。
-      </p>
-    </div>
-  </div>
-</section>
-    
-    
-    <!-- 团队成员 -->
-    <section class="team">
-      <div class="container">
-        <h2>我们的<span>团队</span></h2>
-        <div class="team__grid">
-          <div class="team-member" v-for="(member, index) in teamMembers" :key="index">
-            <div class="team-member__image">
-              <img :src="`/images/team-${index + 1}.jpg`" :alt="`${member.name}`" />
-            </div>
-            <div class="team-member__info">
-              <h3>{{ member.name }}</h3>
-              <p>{{ member.position }}</p>
-              <div class="team-member__social">
-                <a href="#" aria-label="Instagram">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
-                </a>
-                <a href="#" aria-label="LinkedIn">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
-                </a>
+      
+      <div class="comparison-chart">
+        <div class="chart-container">
+          <div class="chart-bar-container">
+            <div v-for="(item, index) in seleniumData" :key="index" class="chart-item">
+              <div class="chart-label">{{ item.region }}</div>
+              <div class="chart-bar-wrapper">
+                <div class="chart-bar" :style="{ width: (item.value / seleniumData[0].value * 100) + '%' }">
+                  <span class="chart-value">{{ item.value }}μg/g</span>
+                </div>
               </div>
             </div>
           </div>
         </div>
+        <div class="chart-note">
+          <p>注：数据来源于湖北省农业科学院茶叶研究所2022年研究报告</p>
+        </div>
       </div>
-    </section>
-    
-    <!-- 客户与合作伙伴 -->
-    <section class="clients">
-      <div class="container">
-        <h2>我们的<span>合作伙伴</span></h2>
-        <div class="clients__logos">
-          <div class="client-logo" v-for="(partner, index) in partners" :key="index">
-            <img :src="`/images/client-${index + 1}.png`" :alt="`${partner.name}`" />
-            <span class="client-name">{{ partner.name }}</span>
+      
+      <div class="selenium-benefits">
+        <h3 class="benefits-title">硒元素的健康价值</h3>
+        <div class="benefits-content">
+          <p>微量元素硒，被世界卫生组织公认为"抗癌之王"、"长寿之星"。美国克拉克教授的大型人体临床试验结果显示：补充硒可以预防肿瘤，这项试验被人们称为"硒防癌里程碑的试验"。</p>
+          <p>试验结果表明：每日补充200微克硒，癌症发生率下降50%、癌症总死亡率下降37%。其中有3种癌症的发病率下降最为明显：前列腺癌下降63%、结直肠癌下降58%、肺癌下降46%。</p>
+        </div>
+      </div>
+      
+      <div class="comparison-facts">
+        <div class="fact-item">
+          <div class="fact-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
+          </div>
+          <div class="fact-content">
+            <h4>为何恩施茶含硒量高？</h4>
+            <p>恩施地区位于世界著名的"硒矿带"上，土壤中自然富含硒元素。茶树作为一种富集植物，能够从土壤中吸收并富集硒元素，使得在此生长的茶叶天然富含硒。</p>
+          </div>
+        </div>
+        
+        <div class="fact-item">
+          <div class="fact-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+          </div>
+          <div class="fact-content">
+            <h4>科学证明</h4>
+            <p>中国疾病预防控制中心营养与食品安全所研究表明，每天饮用富硒茶，可使人体内硒含量增加30%-50%，达到预防疾病的目的。</p>
+          </div>
+        </div>
+        
+        <div class="fact-item">
+          <div class="fact-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20.2 7.8l-7.7 7.7-4-4-5.7 5.7"></path><path d="M15 7h6v6"></path></svg>
+          </div>
+          <div class="fact-content">
+            <h4>市场价值</h4>
+            <p>由于富硒茶的特殊健康价值，其市场价格通常比普通茶叶高出30%-100%，且需求持续增长，特别是在健康意识较强的消费群体中。</p>
           </div>
         </div>
       </div>
-    </section>
+    </div>
+  </div>
+</section>
+
+<!-- 我们的方法 -->
+<section class="methodology">
+  <div class="container">
+    <h2>茶<span>功效</span></h2>
+    <div class="methodology__grid">
+      <div class="methodology-card">
+        <div class="methodology-card__icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"></path></svg>
+        </div>
+        <h3>抗氧化</h3>
+        <p>富硒茶抗氧化能力强，能清除水中污染毒素，增强免疫力，解毒、排毒，保护肝脏，防止糖尿病、白内障等，隔夜茶能够饮用。</p>
+      </div>
+      <div class="methodology-card">
+        <div class="methodology-card__icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 9c.5 0 1 .4 1 1v10c0 .5-.4 1-1 1H7c-.5 0-1-.4-1-1V10c0-.5.4-1 1-1h10zM17 9v-2c0-2.2-1.8-4-4-4s-4 1.8-4 4v2"></path><circle cx="12" cy="15" r="1"></circle></svg>
+        </div>
+        <h3>风味</h3>
+        <p>富硒茶温、凉、冰均可饮用，此茶浓、苦而不涩，后口甘甜；淡，清香爽口。</p>
+      </div>
+      <div class="methodology-card">
+        <div class="methodology-card__icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8h1a4 4 0 0 1 0 8h-1"></path><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"></path><line x1="6" y1="1" x2="6" y2="4"></line><line x1="10" y1="1" x2="10" y2="4"></line><line x1="14" y1="1" x2="14" y2="4"></line></svg>
+        </div>
+        <h3>安神助眠</h3>
+        <p>富硒茶具有安神作用，因此饮用此茶不会导致失眠。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 客户与合作伙伴 -->
+<section class="clients">
+  <div class="container">
+    <h2>我们的<span>合作伙伴</span></h2>
+    <div class="clients__logos">
+      <div class="client-logo" v-for="(partner, index) in partners" :key="index">
+        <img :src="`/images/client-${index + 1}.png`" :alt="`${partner.name}`" />
+        <span class="client-name">{{ partner.name }}</span>
+      </div>
+    </div>
+  </div>
+</section>
     
     <!-- 联系我们 -->
     <section class="cta">
@@ -149,7 +159,7 @@
 </template>
 
 <script setup>
-import { onMounted } from 'vue'
+import { ref, onMounted } from 'vue'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
@@ -163,6 +173,16 @@ const cagegory=[
   {name:'极叶高山野茶',desc:'由恩施市极叶高山茶业有限公司生产'},
   {name:'恩施富硒茶',desc:'由恩施市富硒茶业有限公司生产'},
 ]
+
+// 含硒量对比数据
+const seleniumData = ref([
+  { region: '恩施富硒茶', value: 8.76 },
+  { region: '云南普洱茶', value: 2.34 },
+  { region: '杭州西湖龙井', value: 1.87 },
+  { region: '安徽黄山毛峰', value: 1.65 },
+  { region: '福建铁观音', value: 1.43 },
+  { region: '普通茶叶平均值', value: 0.89 }
+])
 
 const teamMembers = [
   { name: '张三', position: '茶叶品鉴师 / 茶叶专家' },
@@ -209,26 +229,66 @@ onMounted(() => {
     duration: 0.8
   })
   
+  // 含硒量对比研究动画
+  gsap.from('.selenium-comparison h2', {
+    scrollTrigger: {
+      trigger: '.selenium-comparison',
+      start: 'top 80%',
+    },
+    y: 30,
+    opacity: 0,
+    duration: 0.6
+  })
+  
+  // 修改图表动画，避免容器高度变化
+  const chartItems = document.querySelectorAll('.chart-bar');
+  chartItems.forEach((item) => {
+    const targetWidth = item.style.width;
+    item.style.width = '0%';
+    
+    gsap.to(item, {
+      scrollTrigger: {
+        trigger: '.chart-container',
+        start: 'top 80%',
+      },
+      width: targetWidth,
+      opacity: 1,
+      duration: 1,
+      ease: 'power2.out'
+    });
+  });
+  
+  gsap.from('.fact-item', {
+    scrollTrigger: {
+      trigger: '.comparison-facts',
+      start: 'top 90%',
+    },
+    y: 20,
+    opacity: 0,
+    stagger: 0.1,
+    duration: 0.6
+  })
+  
   // 方法论卡片动画
   gsap.from('.methodology h2', {
     scrollTrigger: {
       trigger: '.methodology',
-      start: 'top 80%',
+      start: 'top 90%',
     },
-    y: 50,
+    y: 30,
     opacity: 0,
-    duration: 0.8
+    duration: 0.6
   })
   
   gsap.from('.methodology-card', {
     scrollTrigger: {
       trigger: '.methodology__grid',
-      start: 'top 80%',
+      start: 'top 90%',
     },
-    y: 50,
+    y: 30,
     opacity: 0,
-    stagger: 0.2,
-    duration: 0.8
+    stagger: 0.1,
+    duration: 0.6
   })
   
   // 团队成员动画
@@ -392,10 +452,203 @@ onMounted(() => {
   }
 }
 
+// 茶叶品类列表
+.tea-categories {
+  margin-top: 2rem;
+  
+  h4 {
+    margin-bottom: 1rem;
+    color: var(--color-accent);
+  }
+  
+  ul {
+    list-style-type: none;
+    padding: 0;
+    
+    li {
+      margin-bottom: 0.8rem;
+      padding-left: 1.5rem;
+      position: relative;
+      
+      &::before {
+        content: '•';
+        position: absolute;
+        left: 0;
+        color: var(--color-accent);
+        font-size: 1.2rem;
+      }
+    }
+  }
+}
+
+// 含硒量对比研究
+.selenium-comparison {
+  padding: 5rem 0;
+  background-color: var(--color-secondary);
+  
+  h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+    
+    span {
+      color: var(--color-accent);
+    }
+  }
+}
+
+.comparison-content {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.comparison-text {
+  margin-bottom: 2rem;
+  text-align: center;
+  
+  p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+  }
+}
+
+.comparison-chart {
+  margin-bottom: 3rem;
+}
+
+.chart-container {
+  background-color: rgba(255, 255, 255, 0.05);
+  padding: 2rem;
+  border-radius: 5px;
+  overflow: hidden; /* 确保内容不会溢出 */
+}
+
+.chart-bar-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.chart-item {
+  display: flex;
+  align-items: center;
+  height: 30px; /* 固定每个项目的高度 */
+}
+
+.chart-label {
+  width: 150px;
+  text-align: right;
+  padding-right: 1rem;
+  font-weight: 500;
+  
+  @media (max-width: 576px) {
+    width: 100px;
+    font-size: 0.9rem;
+  }
+}
+
+.chart-bar-wrapper {
+  flex: 1;
+  height: 30px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 15px;
+  overflow: hidden;
+}
+
+.chart-bar {
+  height: 100%;
+  background-color: var(--color-accent);
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  padding: 0 1rem;
+  position: relative;
+  min-width: 60px;
+  opacity: 0.9; /* 初始设置一个不透明度，避免完全隐藏 */
+  transition: width 0.5s ease; /* 添加过渡效果，使动画更平滑 */
+}
+
+.chart-value {
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: rgba(0, 0, 0, 0.8);
+  
+  @media (max-width: 576px) {
+    font-size: 0.8rem;
+  }
+}
+
+.chart-note {
+  text-align: right;
+  margin-top: 1rem;
+  font-size: 0.8rem;
+  color: #999;
+}
+
+.selenium-benefits {
+  background-color: rgba(255, 255, 255, 0.05);
+  border-radius: 5px;
+  padding: 2rem;
+  margin-bottom: 3rem;
+  
+  .benefits-title {
+    color: var(--color-accent);
+    margin-bottom: 1.5rem;
+    text-align: center;
+  }
+  
+  .benefits-content {
+    p {
+      margin-bottom: 1rem;
+      line-height: 1.7;
+      
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+}
+
+.comparison-facts {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+.fact-item {
+  display: flex;
+  gap: 1.5rem;
+  background-color: rgba(255, 255, 255, 0.05);
+  padding: 2rem;
+  border-radius: 5px;
+  transition: var(--transition);
+  
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  }
+}
+
+.fact-icon {
+  color: var(--color-accent);
+  flex-shrink: 0;
+}
+
+.fact-content {
+  h4 {
+    margin-bottom: 1rem;
+  }
+  
+  p {
+    color: #ccc;
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+}
+
 // 方法论
 .methodology {
-  padding: 6rem 0;
-  background-color: var(--color-secondary);
+  padding: 5rem 0;
+  background-color: var(--color-bg);
   
   h2 {
     text-align: center;

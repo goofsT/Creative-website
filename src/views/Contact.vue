@@ -77,19 +77,10 @@
               </div>
               <div class="contact-info__content">
                 <h3>电子邮箱</h3>
-                <p><a href="mailto:info@example.com">info@example.com</a></p>
+                <p><a href="mailto:EnShiTea@outlook.com">EnShiTea@outlook.com</a></p>
               </div>
             </div>
             
-            <div class="contact-info__item">
-              <div class="contact-info__icon">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
-              </div>
-              <div class="contact-info__content">
-                <h3>电话</h3>
-                <p><a href="tel:+1234567890">+123 456 7890</a></p>
-              </div>
-            </div>
             
             <div class="contact-info__item">
               <div class="contact-info__icon">
@@ -97,37 +88,23 @@
               </div>
               <div class="contact-info__content">
                 <h3>地址</h3>
-                <p>北京市朝阳区<br>创意设计中心501室</p>
+                <p>湖北省恩施土家族苗族自治州<br></p>
               </div>
             </div>
-            
+
             <div class="contact-info__item">
               <div class="contact-info__icon">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M21.198 2.433a2.242 2.242 0 0 0-1.022.215l-16.5 7.5a2.25 2.25 0 0 0 .126 4.303l3.898 1.205 2.25 6.75c.226.674.787 1.174 1.5 1.174.48 0 .904-.22 1.184-.535l1.76-2.052 5.45 3.63a2.251 2.251 0 0 0 3.256-1.485l3-16.5a2.25 2.25 0 0 0-2.902-2.705" />
+                  <path d="m10.002 14.003-2.25 2.25" />
+                </svg>
               </div>
               <div class="contact-info__content">
-                <h3>工作时间</h3>
-                <p>周一至周五: 9:00 - 18:00<br>周六、周日: 休息</p>
+                <h3>Telegram</h3>
+                <p><a href="https://t.me/EnShiTea">@EnShiTea</a></p>
               </div>
             </div>
-            
-            <div class="contact-info__social">
-              <h3>关注我们</h3>
-              <div class="social-links">
-                <a href="#" aria-label="Instagram">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
-                </a>
-                <a href="#" aria-label="Facebook">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
-                </a>
-                <a href="#" aria-label="Twitter">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path></svg>
-                </a>
-                <a href="#" aria-label="LinkedIn">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
-                </a>
-              </div>
-            </div>
+          
           </div>
         </div>
       </div>
@@ -138,7 +115,7 @@
       <div class="map-placeholder">
         <div class="map-overlay">
           <h3>我们的位置</h3>
-          <p>北京市朝阳区创意设计中心</p>
+          <p>湖北省恩施土家族苗族自治州</p>
           <a href="#" class="btn btn--small">查看地图</a>
         </div>
       </div>
@@ -215,24 +192,24 @@ const submitForm = () => {
 // FAQ数据
 const faqs = ref([
   {
-    question: '你们提供哪些服务？',
-    answer: '我们提供概念设计、3D建模、视觉效果、工业设计、环境设计等服务，涵盖电影、游戏、建筑和产品设计等多个领域。'
+    question: '恩施富硒茶有哪些特点？',
+    answer: '恩施富硒茶产自世界硒都恩施，土壤中富含硒元素，茶叶自然富集硒。富硒茶具有独特的香气和口感，同时富含茶多酚、氨基酸等营养成分，兼具茶叶的保健功效和硒元素的健康价值，对增强免疫力、抗氧化等方面有显著功效。'
   },
   {
-    question: '如何开始一个项目合作？',
-    answer: '您可以通过本页面的联系表单、电子邮件或电话与我们联系，描述您的项目需求。我们会安排初步咨询，了解详情后提供定制化的解决方案和报价。'
+    question: '如何正确冲泡恩施富硒茶？',
+    answer: '恩施富硒绿茶建议用80-85℃的水温，投茶量约为5克/150ml，第一泡30秒，之后每泡递增10-15秒。富硒红茶则可用95-100℃的沸水，投茶量约为5克/150ml，第一泡20-30秒，后续可适当延长。冲泡时注意水温和时间控制，以保留茶叶的香气和营养成分。'
   },
   {
-    question: '项目周期通常是多久？',
-    answer: '项目周期取决于项目的规模和复杂度。小型项目可能需要2-4周，中型项目通常需要1-3个月，大型项目可能需要3-6个月或更长时间。我们会在项目开始前提供详细的时间表。'
+    question: '富硒茶的保存方法是什么？',
+    answer: '富硒茶应存放在阴凉、干燥、无异味的环境中，避免阳光直射和高温潮湿。建议使用密封性好的茶叶罐或锡罐储存，并远离厨房等有油烟的地方。绿茶保质期一般为12-18个月，红茶可保存18-24个月，但建议在半年内饮用完，以保证最佳品质。'
   },
   {
-    question: '你们是否提供远程合作？',
-    answer: '是的，我们提供全球远程合作服务。通过视频会议、协作工具和定期更新，我们可以与世界各地的客户高效合作。'
+    question: '你们提供茶叶样品试喝吗？',
+    answer: '是的，我们提供小包装的茶叶样品供客户试喝。您可以通过官网联系我们。对于批发客户，我们提供更多样品选择和专业的茶艺师指导。'
   },
   {
-    question: '如何保护我的创意和知识产权？',
-    answer: '我们高度重视客户的知识产权。在开始合作前，我们会签署保密协议(NDA)，确保您的创意和商业信息得到保护。项目完成后，除非获得您的明确许可，否则我们不会公开展示相关作品。'
+    question: '你们的茶叶是否通过有机认证？',
+    answer: '我们部分茶园已通过有机认证，特别是高山茶园系列产品。这些茶园严格按照有机种植标准管理，不使用化学肥料和农药，采用传统手工采摘和加工工艺。我们的有机认证信息可在产品包装上查看，也可以通过官方渠道验证认证真实性。'
   }
 ])
 
@@ -323,7 +300,7 @@ onMounted(() => {
   height: 40vh;
   min-height: 300px;
   background-color: var(--color-bg);
-  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('/images/contact-header.jpg');
+  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('@/assets/images/tea/tea-plantation.jpg');
   background-size: cover;
   background-position: center;
   display: flex;
@@ -526,7 +503,7 @@ onMounted(() => {
   width: 100%;
   height: 100%;
   background-color: var(--color-secondary);
-  background-image: url('/images/map-bg.jpg');
+  background-image: url('@/assets/images/tea/tea-plantation.jpg');
   background-size: cover;
   background-position: center;
   position: relative;

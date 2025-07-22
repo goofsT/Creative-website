@@ -8,11 +8,11 @@
     <section class="hero">
       
       <div class="hero__content">
-        <h1>茶叶<span class="color-red">恩施</span></h1>
+        <h1>恩施<span class="color-red">富硒茶</span></h1>
         <h2>天赐恩山好水，天然富硒滋养</h2>
         <p>—— 高山云雾 · 原生态手工茶 ——</p>
         <div class="hero__buttons">
-          <router-link to="/work" class="btn">探索作品</router-link>
+          <router-link to="/work" class="btn">探索产品</router-link>
           <router-link to="/contact" class="btn btn--outline">联系我们</router-link>
         </div>
       </div>
@@ -25,20 +25,17 @@
     <!-- 公告区域 -->
     <section class="announcements">
       <div class="container">
-        <h2>最新<span>公告</span></h2>
+        <h2>茶叶<span>资讯</span></h2>
         <div class="flex gap-4 justify-between">
           <div class="announcement-card">
-            <h3>当前展览</h3>
-            <h4>赛博朋克：通过电影展望可能的未来</h4>
-            <p>2024年10月6日至2026年4月12日</p>
-            <a href="#" class="btn btn--small">了解更多</a>
+            <h3>新茶</h3>
+            <h4>2025春茶预售开始</h4>
+            <p>恩施高山云雾富硒绿茶，限量发售</p>
           </div>
           <div class="announcement-card">
-            <h3>近期展览</h3>
-            <h4>未来消遣</h4>
-            <p>纽约市地标展览，展示40年的创意设计作品</p>
-            <p>2025年3月27日至5月21日</p>
-            <a href="#" class="btn btn--small">了解更多</a>
+            <h3>活动</h3>
+            <h4>全球免费发货品尝</h4>
+            <p>免费品尝2025年春茶</p>
           </div>
         </div>
       </div>
@@ -48,8 +45,8 @@
     <section class="quote">
       <div class="container">
         <blockquote>
-          <p>"我称科幻为'提前实现的现实'"</p>
-          <cite>- 创意设计师</cite>
+          <p>"好茶，如好友，淡而不薄，浓而不苦，回味悠长"</p>
+          <cite>- 恩施茶艺师</cite>
         </blockquote>
       </div>
     </section>
@@ -57,19 +54,35 @@
     <!-- 作品展示 -->
     <section class="featured-works">
       <div class="container">
-        <h2>精选<span>作品</span></h2>
+        <h2>精选<span>茶品</span></h2>
         <div class="featured-works__grid">
-          <div class="work-card" v-for="i in 3" :key="i">
-            <div class="work-card__image" :style="{ backgroundImage: `url(/images/work-${i}.jpg)` }"></div>
+          <div class="work-card">
+            <div class="work-card__image" style="background-image: url(@/assets/images/tea/VCG211244284652.png)"></div>
             <div class="work-card__content">
-              <h3>概念设计 {{ i }}</h3>
-              <p>未来城市景观和交通工具的视觉概念</p>
+              <h3>恩施玉露</h3>
+              <p>高山云雾出好茶，富硒土壤培育的顶级绿茶</p>
+              <router-link to="/work" class="btn btn--small">查看详情</router-link>
+            </div>
+          </div>
+          <div class="work-card">
+            <div class="work-card__image" style="background-image: url(@/assets/images/tea/VCG211514259609.jpg)"></div>
+            <div class="work-card__content">
+              <h3>富硒红茶</h3>
+              <p>传统工艺精制，醇厚甘甜，回味悠长</p>
+              <router-link to="/work" class="btn btn--small">查看详情</router-link>
+            </div>
+          </div>
+          <div class="work-card">
+            <div class="work-card__image" style="background-image: url(@/assets/images/tea/tea-leaves.jpg)"></div>
+            <div class="work-card__content">
+              <h3>特级茶礼盒</h3>
+              <p>精选富硒绿茶与红茶，高档礼盒包装，送礼佳品</p>
               <router-link to="/work" class="btn btn--small">查看详情</router-link>
             </div>
           </div>
         </div>
         <div class="featured-works__more">
-          <router-link to="/work" class="btn">查看全部作品</router-link>
+          <router-link to="/work" class="btn">查看全部茶品</router-link>
         </div>
       </div>
     </section>
@@ -78,8 +91,8 @@
     <section class="newsletter">
       <div class="container">
         <div class="newsletter__content">
-          <h2>订阅<span>通讯</span></h2>
-          <p>我们为2025年及以后计划了很多内容。成为第一个了解最新消息的人。</p>
+          <h2>订阅<span>茶讯</span></h2>
+          <p>订阅我们的电子通讯，获取新茶上市、茶艺活动和限时优惠信息。</p>
           <form @submit.prevent="subscribeNewsletter">
             <input type="email" placeholder="您的电子邮箱" v-model="email" required />
             <button type="submit" class="btn">订阅</button>
@@ -138,14 +151,12 @@ onMounted(() => {
 
   gsap.from('.announcement-card', {
     scrollTrigger: {
-      trigger: '.announcements__grid',
+      trigger: '.announcements',
       start: 'top 90%',
-      markers: false, 
-      toggleActions: 'play none none none' 
     },
     y: 50,
     opacity: 0,
-    stagger: 0.01,
+    stagger: 0.2,
     duration: 0.8
   })
 
@@ -381,7 +392,7 @@ onMounted(() => {
   
   &:hover {
     transform: translateY(-5px);
-    border:1px solid rgb(24, 94, 24);
+    border:1px solid rgb(76, 138, 76);
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
   }
   

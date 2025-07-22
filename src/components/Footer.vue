@@ -2,10 +2,7 @@
   <footer class="footer">
     <div class="container">
       <div class="footer__content">
-        <div class="footer__logo">
-          <h2>创意<span>设计</span></h2>
-          <p>视觉未来主义者</p>
-        </div>
+
         
         <div class="footer__links">
           <div class="footer__links-group">
@@ -13,8 +10,8 @@
             <ul>
               <li><router-link to="/">首页</router-link></li>
               <li><router-link to="/about">关于</router-link></li>
-              <li><router-link to="/work">作品</router-link></li>
-              <li><router-link to="/timeline">时间线</router-link></li>
+              <li><router-link to="/work">产品</router-link></li>
+              <li><router-link to="/timeline">工艺</router-link></li>
               <li><router-link to="/contact">联系</router-link></li>
             </ul>
           </div>
@@ -22,31 +19,25 @@
           <div class="footer__links-group">
             <h3>联系我们</h3>
             <ul>
-              <li><a href="mailto:info@example.com">info@example.com</a></li>
-              <li><a href="tel:+1234567890">+123 456 7890</a></li>
+              <li>outlook：<a href="mailto:EnShiTea@outlook.com">EnShiTea@outlook.com</a></li>
+              <li>
+                telegram：
+                <a href="https://t.me/yourchannelname" class="telegram-link">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21.198 2.433a2.242 2.242 0 0 0-1.022.215l-16.5 7.5a2.25 2.25 0 0 0 .126 4.303l3.898 1.205 2.25 6.75c.226.674.787 1.174 1.5 1.174.48 0 .904-.22 1.184-.535l1.76-2.052 5.45 3.63a2.251 2.251 0 0 0 3.256-1.485l3-16.5a2.25 2.25 0 0 0-2.902-2.705" />
+                  </svg>
+                  @yourchannelname
+                </a>
+              </li>
             </ul>
           </div>
-          
-          <div class="footer__links-group">
-            <h3>关注我们</h3>
-            <div class="footer__social">
-              <a href="#" aria-label="Instagram">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
-              </a>
-              <a href="#" aria-label="Facebook">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
-              </a>
-              <a href="#" aria-label="YouTube">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"></path><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon></svg>
-              </a>
-            </div>
-          </div>
+
         </div>
       </div>
       
       <div class="footer__newsletter">
         <h3>订阅我们的通讯</h3>
-        <p>获取最新的创意设计资讯和项目更新</p>
+        <p>获取最新的产品资讯</p>
         <form @submit.prevent="subscribeNewsletter">
           <input type="email" placeholder="您的电子邮箱" v-model="email" required />
           <button type="submit" class="btn">订阅</button>
@@ -54,7 +45,7 @@
       </div>
       
       <div class="footer__bottom">
-        <p>&copy; {{ new Date().getFullYear() }} 创意设计. 保留所有权利.</p>
+        <p>&copy; {{ new Date().getFullYear() }} 恩施富硒茶. 保留所有权利.</p>
         <div class="footer__bottom-links">
           <a href="#">隐私政策</a>
           <a href="#">使用条款</a>
@@ -137,6 +128,22 @@ const subscribeNewsletter = () => {
           transition: var(--transition);
           
           &:hover {
+            color: var(--color-accent);
+          }
+        }
+
+        .telegram-link {
+          display: flex;
+          align-items: center;
+          gap: 0.5rem;
+          color: var(--color-text);
+          transition: color 0.3s ease;
+          
+          &:hover {
+            color: var(--color-accent);
+          }
+          
+          svg {
             color: var(--color-accent);
           }
         }

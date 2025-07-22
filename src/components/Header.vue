@@ -12,8 +12,8 @@
           <ul>
             <li><router-link to="/" @click="closeMenu">首页</router-link></li>
             <li><router-link to="/about" @click="closeMenu">关于</router-link></li>
-            <li><router-link to="/work" @click="closeMenu">作品</router-link></li>
-            <li><router-link to="/timeline" @click="closeMenu">时间线</router-link></li>
+            <li><router-link to="/work" @click="closeMenu">产品</router-link></li>
+            <li><router-link to="/timeline" @click="closeMenu">工艺</router-link></li>
             <li><router-link to="/contact" @click="closeMenu">联系</router-link></li>
           </ul>
         </nav>

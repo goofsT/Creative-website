@@ -3,7 +3,7 @@
     <!-- 页面标题 -->
     <section class="page-header">
       <div class="container">
-        <h1>我们的<span>作品</span></h1>
+        <h1>我们的<span>茶品</span></h1>
       </div>
     </section>
     
@@ -113,113 +113,115 @@ import teaImage4 from '@/assets/images/tea/VCG41N1192944963.jpg'
 import teaImage5 from '@/assets/images/tea/VCG41N1295528631.jpg'
 import teaImage6 from '@/assets/images/tea/VCG211186850243.jpg'
 import teaImage7 from '@/assets/images/tea/VCG212d5d059b8.jpg'
+import teaLeaves from '@/assets/images/tea/tea-leaves.jpg'
+import teaPlantation from '@/assets/images/tea/tea-plantation.jpg'
 gsap.registerPlugin(ScrollTrigger)
 
 // 分类数据
 const categories = ref([
-  { id: 'concept', name: '概念设计' },
-  { id: 'futuristic', name: '未来主义' },
-  { id: 'industrial', name: '工业设计' },
-  { id: 'environment', name: '环境设计' }
+  { id: 'green', name: '绿茶系列' },
+  { id: 'black', name: '红茶系列' },
+  { id: 'gift', name: '礼盒系列' },
+  { id: 'special', name: '特色茶品' }
 ])
 
 // 项目数据
 const projects = ref([
   {
     id: 1,
-    title: '未来城市概念',
-    category: '概念设计',
-    categoryId: 'concept',
-    image: cityImage,
-    description: '这个项目展示了我们对未来城市的愿景，融合了可持续发展理念和先进技术。我们设计了垂直花园、空中交通系统和自给自足的社区空间，创造一个和谐的未来都市景观。',
-    client: '未来城市规划局',
-    date: '2025',
-    services: '概念设计, 3D建模, 视觉效果',
-    gallery: [teaImage, teaImage2, teaImage3]
+    title: '恩施玉露',
+    category: '绿茶系列',
+    categoryId: 'green',
+    image: teaImage,
+    description: '恩施玉露是湖北恩施州的特产名茶，属于绿茶类。产于世界硒都恩施，富含硒元素，具有独特的保健功效。其外形挺直略扁，色泽翠绿，香气清高持久，滋味鲜爽回甘，汤色嫩绿明亮。采用传统工艺精制而成，保留了茶叶的天然营养成分。',
+    client: '恩施玉露茶业有限公司',
+    date: '2025春茶',
+    services: '高山云雾茶, 富硒绿茶, 一级茶叶',
+    gallery: [teaImage2, teaImage3, teaPlantation]
   },
   {
     id: 2,
-    title: '交通工具设计',
-    category: '工业设计',
-    categoryId: 'industrial',
-    image: teaImage,
-    description: '这款概念交通工具采用电动推进系统和自动驾驶技术，为未来城市提供高效、环保的交通解决方案。其流线型设计不仅美观，还能最大限度地提高能源效率。',
-    client: '新能源交通公司',
-    date: '2024',
-    services: '产品设计, 工业设计, 概念开发',
-    gallery: ['/images/work-2-1.jpg', '/images/work-2-2.jpg']
+    title: '富硒绿茶',
+    category: '绿茶系列',
+    categoryId: 'green',
+    image: teaImage2,
+    description: '富硒绿茶采自恩施海拔1200米以上的高山茶园，土壤富含硒元素，茶叶自然吸收硒元素。经过传统杀青、揉捻、烘干等工艺精制而成。茶叶条索紧结，色泽翠绿，香气高爽，滋味鲜醇，具有绿茶的清香和富硒茶的独特口感。',
+    client: '恩施高山茶业',
+    date: '2025春茶',
+    services: '高山绿茶, 富硒茶, 有机茶',
+    gallery: [teaImage6, teaLeaves]
   },
   {
     id: 3,
-    title: '太空殖民地',
-    category: '未来主义',
-    categoryId: 'futuristic',
-    image: teaImage2,
-    description: '这个项目探索了人类在其他星球上建立殖民地的可能性。我们设计了模块化居住单元、资源提取设施和生态系统，创造一个可持续的外星生活环境。',
-    client: '太空探索机构',
-    date: '2026',
-    services: '概念设计, 环境设计, 科学咨询',
-    gallery: ['/images/work-3-1.jpg', '/images/work-3-2.jpg', '/images/work-3-3.jpg']
+    title: '恩施红茶',
+    category: '红茶系列',
+    categoryId: 'black',
+    image: teaImage3,
+    description: '恩施红茶采用富硒土壤培育的茶叶为原料，经过萎凋、揉捻、发酵、烘干等传统工艺精制而成。茶叶条索紧结，色泽乌润，香气高锐持久，滋味醇厚甘爽，汤色红艳明亮。富含茶多酚、氨基酸等营养成分，并富含硒元素，具有很高的保健价值。',
+    client: '恩施红茶专业合作社',
+    date: '2025春茶',
+    services: '红茶, 富硒茶, 高山茶',
+    gallery: [teaImage4, teaImage7]
   },
   {
     id: 4,
-    title: '水下研究站',
-    category: '环境设计',
-    categoryId: 'environment',
-    image: teaImage3,
-    description: '这个水下研究站设计用于深海科学研究和海洋资源勘探。其结构能够承受极端水压，同时为研究人员提供舒适的生活和工作环境。',
-    client: '海洋研究所',
-    date: '2025',
-    services: '建筑设计, 环境设计, 工程咨询',
-    gallery: ['/images/work-4-1.jpg', '/images/work-4-2.jpg']
+    title: '金骏眉红茶',
+    category: '红茶系列',
+    categoryId: 'black',
+    image: teaImage4,
+    description: '恩施金骏眉红茶选用恩施高山茶园的嫩芽为原料，经过传统工艺精制而成。茶叶外形紧结匀整，色泽乌黑油润，内质香高持久，滋味醇厚甘爽，汤色红亮，叶底红匀明亮。富含多种氨基酸和微量元素，特别是硒元素含量丰富，具有独特的保健功效。',
+    client: '恩施茶叶研究所',
+    date: '2025特级茶',
+    services: '特级红茶, 富硒茶, 礼品茶',
+    gallery: [teaImage5, teaImage6]
   },
   {
     id: 5,
-    title: '智能家居系统',
-    category: '工业设计',
-    categoryId: 'industrial',
-    image: teaImage4,
-    description: '这套智能家居系统整合了人工智能、物联网和可再生能源技术，为用户提供高效、便捷、环保的生活体验。系统可以根据用户习惯自动调节环境参数，优化能源使用。',
-    client: '智能生活科技公司',
-    date: '2024',
-    services: '产品设计, 用户界面设计, 系统集成',
-    gallery: ['/images/work-5-1.jpg', '/images/work-5-2.jpg']
+    title: '富硒茶礼盒',
+    category: '礼盒系列',
+    categoryId: 'gift',
+    image: teaImage5,
+    description: '富硒茶礼盒包含恩施精选绿茶和红茶，采用高档礼盒包装，是送礼的理想选择。礼盒内含恩施玉露、富硒绿茶和恩施红茶，让收礼者能够品尝到不同种类的恩施富硒茶。每款茶叶都采用独立真空包装，保证茶叶的新鲜度和香气。',
+    client: '恩施茶业集团',
+    date: '2025年礼品系列',
+    services: '礼品茶, 组合装, 高档包装',
+    gallery: [teaImage7, teaImage]
   },
   {
     id: 6,
-    title: '生态城市规划',
-    category: '环境设计',
-    categoryId: 'environment',
-    image: teaImage5,
-    description: '这个生态城市规划项目旨在创建一个与自然和谐共存的城市环境。我们设计了绿色走廊、雨水收集系统和可再生能源设施，最大限度地减少城市对环境的影响。',
-    client: '可持续发展委员会',
-    date: '2025',
-    services: '城市规划, 景观设计, 环境工程',
-    gallery: ['/images/work-6-1.jpg', '/images/work-6-2.jpg', '/images/work-6-3.jpg']
+    title: '有机富硒茶',
+    category: '特色茶品',
+    categoryId: 'special',
+    image: teaImage6,
+    description: '有机富硒茶采用有机种植方式，不使用任何化学肥料和农药，生长在纯净的高山环境中。茶园位于恩施海拔1500米以上的高山地区，远离污染，土壤天然富含硒元素。茶叶经过严格的有机认证，保证了产品的纯净和安全。具有清香持久，滋味鲜爽的特点。',
+    client: '恩施有机茶业',
+    date: '2025有机认证茶',
+    services: '有机茶, 富硒茶, 生态茶',
+    gallery: [teaPlantation, teaLeaves]
   },
   {
     id: 7,
-    title: '生态城市规划',
-    category: '环境设计',
-    categoryId: 'environment',
-    image: teaImage6,
-    description: '这个生态城市规划项目旨在创建一个与自然和谐共存的城市环境。我们设计了绿色走廊、雨水收集系统和可再生能源设施，最大限度地减少城市对环境的影响。',
-    client: '可持续发展委员会',
-    date: '2025',
-    services: '城市规划, 景观设计, 环境工程',
-    gallery: ['/images/work-6-1.jpg', '/images/work-6-2.jpg', '/images/work-6-3.jpg']
+    title: '富硒老青茶',
+    category: '特色茶品',
+    categoryId: 'special',
+    image: teaImage7,
+    description: '富硒老青茶是恩施特有的传统工艺茶，采用恩施高山富硒茶园的茶叶，经过特殊工艺加工而成。茶叶经过轻度发酵，介于绿茶和红茶之间，具有绿茶的清香和红茶的醇厚。滋味独特，回甘持久，汤色橙黄明亮，是恩施茶中的特色品种。',
+    client: '恩施传统茶艺研究所',
+    date: '2025特色茶',
+    services: '传统工艺, 富硒茶, 特色茶品',
+    gallery: [teaImage, teaImage3]
   },
   {
     id: 8,
-    title: '生态城市规划',
-    category: '环境设计',
-    categoryId: 'environment',
-    image: teaImage7,
-    description: '这个生态城市规划项目旨在创建一个与自然和谐共存的城市环境。我们设计了绿色走廊、雨水收集系统和可再生能源设施，最大限度地减少城市对环境的影响。',
-    client: '可持续发展委员会',
-    date: '2025',
-    services: '城市规划, 景观设计, 环境工程',
-    gallery: ['/images/work-6-1.jpg', '/images/work-6-2.jpg', '/images/work-6-3.jpg']
+    title: '高山野生茶',
+    category: '特色茶品',
+    categoryId: 'special',
+    image: cityImage,
+    description: '高山野生茶采自恩施深山中自然生长的野生茶树，这些茶树生长在海拔1800米以上的原始森林中，未经人工培育，完全靠天然生长。茶叶中富含多种天然活性物质和微量元素，特别是硒元素含量极高。滋味独特，香气高锐持久，回甘明显，是难得的天然珍品。',
+    client: '恩施野生茶研究中心',
+    date: '2025限量版',
+    services: '野生茶, 富硒茶, 珍稀茶品',
+    gallery: [teaLeaves, teaPlantation]
   }
 ])
 
@@ -293,7 +295,7 @@ onMounted(() => {
   height: 40vh;
   min-height: 300px;
   background-color: var(--color-bg);
-  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('/images/work-header.jpg');
+  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('@/assets/images/tea/tea-plantation.jpg');
   background-size: cover;
   background-position: center;
   display: flex;
