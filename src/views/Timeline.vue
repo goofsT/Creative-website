@@ -576,4 +576,170 @@ onMounted(() => {
     font-size: 2rem;
   }
 }
+
+// 移动端优化
+@media (max-width: 768px) {
+  .timeline-header {
+    &__content {
+      padding: 8rem 0 4rem;
+    }
+    
+    &__title {
+      font-size: 2.5rem;
+    }
+  }
+  
+  .timeline {
+    &__tabs {
+      flex-direction: column;
+      margin-bottom: 2rem;
+      
+      button {
+        width: 100%;
+        margin-bottom: 0.5rem;
+      }
+    }
+  }
+  
+  .timeline-item {
+    &::before {
+      left: 15px;
+    }
+    
+    &__content {
+      margin-left: 40px;
+      width: calc(100% - 40px);
+    }
+    
+    &__year {
+      left: 0;
+      top: 0;
+      transform: none;
+      width: 30px;
+      height: 30px;
+      font-size: 0.8rem;
+    }
+  }
+  
+  .future-vision {
+    &__grid {
+      grid-template-columns: 1fr;
+    }
+  }
+}
+
+@media (max-width: 576px) {
+  .timeline-header {
+    &__content {
+      padding: 6rem 0 3rem;
+    }
+    
+    &__title {
+      font-size: 2rem;
+    }
+  }
+  
+  .timeline {
+    padding: 2.5rem 0;
+    
+    &__title {
+      font-size: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+    
+    &__tabs {
+      margin-bottom: 1.5rem;
+      
+      button {
+        padding: 0.5rem;
+        font-size: 0.9rem;
+      }
+    }
+  }
+  
+  .timeline-item {
+    margin-bottom: 2rem;
+    padding-bottom: 1.5rem;
+    
+    &__content {
+      padding: 1rem;
+    }
+    
+    &__title {
+      font-size: 1.2rem;
+      margin-bottom: 0.5rem;
+    }
+    
+    &__description {
+      font-size: 0.9rem;
+      margin-bottom: 1rem;
+    }
+    
+    &__image {
+      height: 180px;
+      margin-bottom: 1rem;
+    }
+    
+    &__achievements {
+      &-title {
+        font-size: 1rem;
+        margin-bottom: 0.5rem;
+      }
+      
+      &-list {
+        font-size: 0.9rem;
+        
+        li {
+          margin-bottom: 0.3rem;
+          padding-left: 1.2rem;
+          
+          &::before {
+            width: 6px;
+            height: 6px;
+            top: 7px;
+          }
+        }
+      }
+    }
+  }
+  
+  .future-vision {
+    padding: 2.5rem 0;
+    
+    &__title {
+      font-size: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+    
+    &__subtitle {
+      font-size: 1rem;
+      margin-bottom: 2rem;
+    }
+  }
+  
+  .vision-card {
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+    
+    &__icon {
+      width: 50px;
+      height: 50px;
+      margin-bottom: 1rem;
+      
+      svg {
+        width: 25px;
+        height: 25px;
+      }
+    }
+    
+    &__title {
+      font-size: 1.1rem;
+      margin-bottom: 0.5rem;
+    }
+    
+    &__text {
+      font-size: 0.9rem;
+    }
+  }
+}
 </style> 

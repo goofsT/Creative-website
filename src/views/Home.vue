@@ -34,7 +34,7 @@
           </div>
           <div class="announcement-card">
             <h3>活动</h3>
-            <h4>全球免费发货品尝</h4>
+            <h4>7折品尝</h4>
             <p>免费品尝2025年春茶</p>
           </div>
         </div>
@@ -52,7 +52,7 @@
     </section>
 
     <!-- 作品展示 -->
-    <section class="featured-works">
+    <!-- <section class="featured-works">
       <div class="container">
         <h2>精选<span>茶品</span></h2>
         <div class="featured-works__grid">
@@ -60,7 +60,7 @@
             <div class="work-card__image" style="background-image: url(@/assets/images/tea/VCG211244284652.png)"></div>
             <div class="work-card__content">
               <h3>恩施玉露</h3>
-              <p>高山云雾出好茶，富硒土壤培育的顶级绿茶</p>
+              <p>高山云雾出好茶，富硒土壤培育的顶级手工绿茶</p>
               <router-link to="/work" class="btn btn--small">查看详情</router-link>
             </div>
           </div>
@@ -85,7 +85,7 @@
           <router-link to="/work" class="btn">查看全部茶品</router-link>
         </div>
       </div>
-    </section>
+    </section> -->
 
     <!-- 通讯订阅 -->
     <section class="newsletter">
@@ -450,6 +450,8 @@ onMounted(() => {
 // 作品展示
 .featured-works {
   padding: 6rem 0;
+  background-color: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(8px);
   
   h2 {
     text-align: center;
@@ -556,6 +558,115 @@ onMounted(() => {
           outline: none;
           border-color: var(--color-accent);
         }
+      }
+    }
+  }
+}
+
+// 移动端优化
+@media (max-width: 768px) {
+  .hero {
+    &__content {
+      padding: 6rem 0 4rem;
+    }
+    
+    &__title {
+      font-size: 2.5rem;
+    }
+    
+    &__subtitle {
+      font-size: 1.1rem;
+      max-width: 100%;
+    }
+  }
+  
+  .announcements {
+    &__grid {
+      grid-template-columns: 1fr;
+    }
+  }
+  
+  .featured-works {
+    &__grid {
+      grid-template-columns: 1fr;
+    }
+  }
+}
+
+@media (max-width: 576px) {
+  .hero {
+    &__content {
+      padding: 5rem 0 3rem;
+    }
+    
+    &__title {
+      font-size: 2rem;
+      letter-spacing: 1px;
+    }
+    
+    &__subtitle {
+      font-size: 1rem;
+      margin-bottom: 1.5rem;
+    }
+    
+    &__buttons {
+      flex-direction: column;
+      align-items: stretch;
+      gap: 0.8rem;
+      
+      .btn {
+        text-align: center;
+      }
+    }
+  }
+  
+  .quote {
+    padding: 3rem 0;
+    
+    &__text {
+      font-size: 1.3rem;
+      padding: 0 1rem;
+    }
+    
+    &__author {
+      font-size: 0.9rem;
+    }
+  }
+  
+  .newsletter {
+    &__title {
+      font-size: 1.5rem;
+    }
+    
+    &__form {
+      flex-direction: column;
+      
+      input {
+        width: 100%;
+        margin-right: 0;
+        margin-bottom: 0.8rem;
+      }
+      
+      button {
+        width: 100%;
+      }
+    }
+  }
+  
+  .announcement-card {
+    padding: 1.2rem;
+    
+    &__title {
+      font-size: 1.1rem;
+    }
+  }
+  
+  .featured-works {
+    &__item {
+      margin-bottom: 1.5rem;
+      
+      &-title {
+        font-size: 1.2rem;
       }
     }
   }

@@ -634,4 +634,185 @@ onMounted(() => {
     margin: 0;
   }
 }
+
+// 移动端优化
+@media (max-width: 768px) {
+  .contact-header {
+    &__content {
+      padding: 8rem 0 4rem;
+    }
+    
+    &__title {
+      font-size: 2.5rem;
+    }
+  }
+  
+  .contact-info {
+    &__grid {
+      grid-template-columns: 1fr;
+    }
+  }
+  
+  .contact-form {
+    &__grid {
+      grid-template-columns: 1fr;
+    }
+  }
+  
+  .map {
+    &__overlay {
+      padding: 1.5rem;
+    }
+  }
+  
+  .faq {
+    &__grid {
+      grid-template-columns: 1fr;
+    }
+  }
+}
+
+@media (max-width: 576px) {
+  .contact-header {
+    &__content {
+      padding: 6rem 0 3rem;
+    }
+    
+    &__title {
+      font-size: 2rem;
+    }
+  }
+  
+  .contact-info {
+    padding: 2.5rem 0;
+    
+    &__title {
+      font-size: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+    
+    &__subtitle {
+      font-size: 1rem;
+      margin-bottom: 2rem;
+    }
+  }
+  
+  .info-card {
+    padding: 1.2rem;
+    margin-bottom: 1.5rem;
+    
+    &__icon {
+      width: 50px;
+      height: 50px;
+      margin-bottom: 1rem;
+      
+      svg {
+        width: 25px;
+        height: 25px;
+      }
+    }
+    
+    &__title {
+      font-size: 1.1rem;
+      margin-bottom: 0.5rem;
+    }
+    
+    &__text {
+      font-size: 0.9rem;
+      
+      a {
+        font-size: 0.9rem;
+      }
+    }
+  }
+  
+  .contact-form {
+    padding: 2.5rem 0;
+    
+    &__title {
+      font-size: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+    
+    &__subtitle {
+      font-size: 1rem;
+      margin-bottom: 2rem;
+    }
+    
+    &__field {
+      margin-bottom: 1rem;
+      
+      label {
+        font-size: 0.9rem;
+        margin-bottom: 0.3rem;
+      }
+      
+      input, textarea {
+        padding: 0.8rem;
+        font-size: 0.9rem;
+      }
+    }
+    
+    &__submit {
+      margin-top: 1.5rem;
+      
+      button {
+        padding: 0.8rem 1.5rem;
+        font-size: 0.9rem;
+      }
+    }
+  }
+  
+  .map {
+    height: 300px;
+    
+    &__overlay {
+      padding: 1rem;
+      max-width: 90%;
+      
+      &-title {
+        font-size: 1.1rem;
+        margin-bottom: 0.5rem;
+      }
+      
+      &-address {
+        font-size: 0.9rem;
+        margin-bottom: 1rem;
+      }
+      
+      &-button {
+        padding: 0.6rem 1rem;
+        font-size: 0.8rem;
+      }
+    }
+  }
+  
+  .faq {
+    padding: 2.5rem 0;
+    
+    &__title {
+      font-size: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+    
+    &__subtitle {
+      font-size: 1rem;
+      margin-bottom: 2rem;
+    }
+    
+    &__item {
+      margin-bottom: 1rem;
+      
+      &-question {
+        font-size: 1.1rem;
+        padding: 0.8rem 1rem;
+      }
+      
+      &-answer {
+        padding: 1rem;
+        font-size: 0.9rem;
+      }
+    }
+  }
+}
 </style> 

@@ -138,6 +138,7 @@ onUnmounted(() => {
   
   &__social {
     display: flex;
+    align-items: center;
     
     a {
       margin-left: 1rem;
@@ -179,14 +180,16 @@ onUnmounted(() => {
       position: fixed;
       top: 0;
       right: -100%;
-      width: 80%;
-      max-width: 400px;
+      width: 70%;
+      max-width: 300px;
       height: 100vh;
       background-color: var(--color-bg);
       display: flex;
       align-items: center;
       justify-content: center;
       transition: var(--transition);
+      box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+      z-index: 100;
       
       &.active {
         right: 0;
@@ -197,10 +200,10 @@ onUnmounted(() => {
         align-items: center;
         
         li {
-          margin: 1.5rem 0;
+          margin: 1.2rem 0;
           
           a {
-            font-size: 1.2rem;
+            font-size: 1.1rem;
           }
         }
       }
@@ -212,6 +215,45 @@ onUnmounted(() => {
     
     &__menu-toggle {
       display: flex;
+    }
+  }
+}
+
+@media (max-width: 576px) {
+  .header {
+    padding: 1rem 0;
+    
+    &--scrolled {
+      padding: 0.8rem 0;
+    }
+    
+    &__logo {
+      h1 {
+        font-size: 1.5rem;
+      }
+    }
+    
+    &__nav {
+      width: 80px;
+      
+      ul {
+        li {
+          margin: 1rem 0;
+          
+          a {
+            font-size: 1rem;
+          }
+        }
+      }
+    }
+    
+    &__menu-toggle {
+      width: 25px;
+      height: 18px;
+      
+      span {
+        height: 2px;
+      }
     }
   }
 }

@@ -10,21 +10,16 @@
   // 颜色变量
   --color-primary: #2c3e50;
   --color-accent: #e67e22;
-  --color-bg: #ffffff;
-  --color-bg-alt: #f8f9fa;
-  --color-text: #333333;
-  --color-text-light: #666666;
-  --color-heading: #2c3e50;
-  --color-card-bg: #ffffff;
+  --color-bg: #1a1a1a;
+  --color-bg-alt: #2a2a2a;
+  --color-text: #ffffff;
+  --color-text-light: #cccccc;
+  --color-heading: #ffffff;
+  --color-card-bg: rgba(255, 255, 255, 0.05);
   
   // 暗色主题
   @media (prefers-color-scheme: dark) {
-    --color-bg: #1a1a1a;
-    --color-bg-alt: #2a2a2a;
-    --color-text: #ffffff;
-    --color-text-light: #cccccc;
-    --color-heading: #ffffff;
-    --color-card-bg: rgba(255, 255, 255, 0.05);
+   
   }
 }
 
@@ -119,8 +114,81 @@ img {
     font-size: 1.8rem;
   }
   
+  h3 {
+    font-size: 1.5rem;
+  }
+  
   .container {
     padding: 0 1rem;
+  }
+}
+
+// 移动端优化
+@media (max-width: 576px) {
+  html {
+    font-size: 15px;
+  }
+  
+  h1 {
+    font-size: 2rem;
+  }
+  
+  h2 {
+    font-size: 1.5rem;
+  }
+  
+  h3 {
+    font-size: 1.3rem;
+  }
+  
+  p {
+    font-size: 0.95rem;
+    margin-bottom: 1.2rem;
+  }
+  
+  .container {
+    padding: 0 0.8rem;
+  }
+  
+  // 按钮样式调整
+  .btn {
+    padding: 0.6rem 1.5rem;
+    font-size: 0.9rem;
+  }
+  
+  // 减小各区块间距
+  section {
+    padding: 2.5rem 0;
+  }
+  
+  // 调整卡片内间距
+  .card {
+    padding: 1rem;
+    margin-bottom: 1rem;
+  }
+  
+  // 减小图片与文字间距
+  .image-text-wrapper {
+    gap: 1rem;
+  }
+}
+
+// 超小屏幕优化
+@media (max-width: 375px) {
+  html {
+    font-size: 14px;
+  }
+  
+  h1 {
+    font-size: 1.8rem;
+  }
+  
+  h2 {
+    font-size: 1.4rem;
+  }
+  
+  .container {
+    padding: 0 0.6rem;
   }
 }
 
