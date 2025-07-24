@@ -238,15 +238,6 @@ const seleniumData = ref([
   { region: '普通茶叶平均值', value: 0.89 }
 ])
 
-const partners = [
-  { name: '恩施市玉露茶业有限公司' },
-  { name: '鹤峰县绿林茶场' },
-  { name: '恩施市伍家台富硒茶业有限公司' },
-  { name: '利川市雾洞茶厂' },
-  { name: '恩施市极叶高山茶业有限公司' },
-  { name: '恩施市富硒茶业有限公司' },
-]
-
 const { proxy } = getCurrentInstance();
 
 // 显示茶叶功效信息弹框

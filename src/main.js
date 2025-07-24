@@ -3,7 +3,7 @@ import App from './App.vue'
 import router from './router'
 import './styles/main.scss'
 import 'virtual:uno.css'
-import Message from './utils/message.js'
+
 
 // 初始化主题函数
 const initTheme = () => {
@@ -22,7 +22,5 @@ initTheme()
 
 const app = createApp(App)
 
-// 全局挂载消息组件
-app.config.globalProperties.$message = Message
 
 app.use(router).mount('#app') 

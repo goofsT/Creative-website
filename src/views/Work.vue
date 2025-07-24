@@ -118,8 +118,6 @@
 import { ref, computed, onMounted } from 'vue'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
-import cityImage from '@/assets/images/tea/VCG21gic3044108.jpg'
-import teaImage from '@/assets/images/tea/VCG41N945231298.jpg'
 import yulu from '@/assets/images/product/yulu.jpg'
 import yulu1 from '@/assets/images/product/yulu1.jpg'
 import yulu2 from '@/assets/images/product/yulu2.jpg'
@@ -310,7 +308,7 @@ onMounted(() => {
   height: 40vh;
   min-height: 300px;
   background-color: var(--color-bg);
-  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('@/assets/images/tea/tea-plantation.jpg');
+  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('@/assets/images/tea/VCG211522801755.png');
   background-size: cover;
   background-position: center;
   display: flex;

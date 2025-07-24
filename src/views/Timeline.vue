@@ -112,7 +112,7 @@ const greenTeaItems = ref([
     year: '第一步',
     title: '鲜叶采摘',
     description: '富硒绿茶的制作始于精心采摘。采茶工人在清晨露水未干时采摘一芽一叶或一芽二叶的嫩芽，确保茶叶品质的基础。富硒土壤培育的茶树，其叶片含有丰富的硒元素，对人体健康极为有益。',
-    image: '/src/assets/images/tea/tea-plantation.jpg',
+    image: '/src/assets/images/tea/pexels-gu-ko-2150570603-31756541.jpg',
     achievements: [
       '选择富硒土壤区域的茶园',
       '严格把控采摘标准',

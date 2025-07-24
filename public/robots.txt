@@ -1,10 +1,59 @@
-# 允许所有搜索引擎爬取网站内容
+# 恩施富硒茶官方网站 Robots.txt
+# 网站地图
+Sitemap: https://www.enshitea.com/sitemap.xml
+
+# 允许所有搜索引擎爬取大部分内容
 User-agent: *
 Allow: /
+Allow: /about
+Allow: /products/
+Allow: /tea-culture/
+Allow: /news/
+Allow: /contact
+Allow: /faq
+Allow: /knowledge/
 
-# 禁止爬取的目录
+# 禁止爬取的目录和文件
 Disallow: /admin/
 Disallow: /private/
+Disallow: /tmp/
+Disallow: /assets/js/
+Disallow: /*.json$
+Disallow: /*.xml$
+Disallow: /*?*sort=
+Disallow: /*?*filter=
+Disallow: /*?*query=
 
-# 网站地图位置
-Sitemap: https://www.enshitea.com/sitemap.xml 
+# 设置爬取延迟，每10秒爬取一个页面，避免服务器过载
+Crawl-delay: 10
+
+# 百度爬虫特殊规则
+User-agent: Baiduspider
+Allow: /
+Disallow: /admin/
+
+# Google爬虫特殊规则
+User-agent: Googlebot
+Allow: /
+Allow: /*.js$
+Allow: /*.css$
+
+# 图片搜索爬虫
+User-agent: Googlebot-Image
+Allow: /assets/img/
+Allow: /assets/images/
+Allow: /public/img/
+
+# Bing爬虫特殊规则
+User-agent: Bingbot
+Allow: /
+
+# 禁止特定爬虫
+User-agent: MJ12bot
+Disallow: /
+
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: SemrushBot
+Disallow: / 

@@ -7,92 +7,41 @@
       </div>
     </section>
     
-    <!-- 联系内容 -->
-    <section class="contact-content">
+    <!-- 联系内容区域 -->
+    <section class="contact-section">
       <div class="container">
-        <div class="contact-content__grid">
-          <div class="contact-form">
-            <h2>发送<span>消息</span></h2>
-            <p>无论您有任何问题、建议或合作意向，都欢迎与我们联系。我们将尽快回复您。</p>
-            
-            <form @submit.prevent="submitForm">
-              <div class="form-group">
-                <label for="name">姓名</label>
-                <input 
-                  type="text" 
-                  id="name" 
-                  v-model="form.name" 
-                  required 
-                  placeholder="请输入您的姓名"
-                >
-              </div>
-              
-              <div class="form-group">
-                <label for="email">电子邮箱</label>
-                <input 
-                  type="email" 
-                  id="email" 
-                  v-model="form.email" 
-                  required 
-                  placeholder="请输入您的电子邮箱"
-                >
-              </div>
-              
-              <div class="form-group">
-                <label for="subject">主题</label>
-                <input 
-                  type="text" 
-                  id="subject" 
-                  v-model="form.subject" 
-                  required 
-                  placeholder="请输入消息主题"
-                >
-              </div>
-              
-              <div class="form-group">
-                <label for="message">消息</label>
-                <textarea 
-                  id="message" 
-                  v-model="form.message" 
-                  required 
-                  placeholder="请输入您的消息内容"
-                  rows="6"
-                ></textarea>
-              </div>
-              
-              <button type="submit" class="btn" :disabled="isSubmitting">
-                {{ isSubmitting ? '发送中...' : '发送消息' }}
-              </button>
-              
-              <div class="form-message" v-if="formMessage">
-                {{ formMessage }}
-              </div>
-            </form>
-          </div>
-          
-          <div class="contact-info">
-            <div class="contact-info__item">
+        <div class="section-title">
+          <h2>联系<span>方式</span></h2>
+          <p>您可以通过以下方式与我们联系，我们将尽快回复您的咨询</p>
+        </div>
+        
+        <div class="contact-info">
+          <div class="contact-info__item">
+            <a href="mailto:EnShiTea@outlook.com" class="contact-info__link">
               <div class="contact-info__icon">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
               </div>
               <div class="contact-info__content">
                 <h3>电子邮箱</h3>
-                <p><a href="mailto:EnShiTea@outlook.com">EnShiTea@outlook.com</a></p>
+                <p>EnShiTea@outlook.com</p>
               </div>
-            </div>
-            
-            
-            <div class="contact-info__item">
+            </a>
+          </div>
+          
+          <div class="contact-info__item">
+            <a href="https://maps.app.goo.gl/T8UtnWKraWhwtdC2A" target="_blank" class="contact-info__link">
               <div class="contact-info__icon">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
               </div>
               <div class="contact-info__content">
                 <h3>地址</h3>
-                <p>湖北省恩施土家族苗族自治州<br></p>
+                <p>湖北省恩施土家族苗族自治州</p>
               </div>
-            </div>
+            </a>
+          </div>
 
-            <div class="contact-info__item">
+          <div class="contact-info__item">
+            <a href="https://t.me/EnShiTea" target="_blank" class="contact-info__link">
               <div class="contact-info__icon">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                   <path d="M21.198 2.433a2.242 2.242 0 0 0-1.022.215l-16.5 7.5a2.25 2.25 0 0 0 .126 4.303l3.898 1.205 2.25 6.75c.226.674.787 1.174 1.5 1.174.48 0 .904-.22 1.184-.535l1.76-2.052 5.45 3.63a2.251 2.251 0 0 0 3.256-1.485l3-16.5a2.25 2.25 0 0 0-2.902-2.705" />
@@ -101,10 +50,23 @@
               </div>
               <div class="contact-info__content">
                 <h3>Telegram</h3>
-                <p><a href="https://t.me/EnShiTea">@EnShiTea</a></p>
+                <p>@EnShiTea</p>
               </div>
-            </div>
-          
+            </a>
+          </div>
+
+          <div class="contact-info__item">
+            <a href="https://www.facebook.com/profile.php?id=61578685470698&mibextid=wwXIfr&mibextid=wwXIfr" target="_blank" class="contact-info__link">
+              <div class="contact-info__icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
+                </svg>
+              </div>
+              <div class="contact-info__content">
+                <h3>Facebook</h3>
+                <p>恩施富硒茶</p>
+              </div>
+            </a>
           </div>
         </div>
       </div>
@@ -116,7 +78,9 @@
         <div class="map-overlay">
           <h3>我们的位置</h3>
           <p>湖北省恩施土家族苗族自治州</p>
-          <a href="#" class="btn btn--small">查看地图</a>
+          <div class="map w-500px h-300px" id="map">
+
+          </div>
         </div>
       </div>
     </section>
@@ -151,43 +115,8 @@
 import { ref, onMounted } from 'vue'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
-
 gsap.registerPlugin(ScrollTrigger)
 
-// 表单数据
-const form = ref({
-  name: '',
-  email: '',
-  subject: '',
-  message: ''
-})
-
-const isSubmitting = ref(false)
-const formMessage = ref('')
-
-// 提交表单
-const submitForm = () => {
-  isSubmitting.value = true
-  
-  // 模拟表单提交
-  setTimeout(() => {
-    formMessage.value = '感谢您的留言！我们将尽快回复您。'
-    isSubmitting.value = false
-    
-    // 重置表单
-    form.value = {
-      name: '',
-      email: '',
-      subject: '',
-      message: ''
-    }
-    
-    // 清除成功消息
-    setTimeout(() => {
-      formMessage.value = ''
-    }, 5000)
-  }, 1500)
-}
 
 // FAQ数据
 const faqs = ref([
@@ -287,6 +216,9 @@ onMounted(() => {
     stagger: 0.15,
     duration: 0.6
   })
+
+  
+  
 })
 </script>
 
@@ -300,7 +232,7 @@ onMounted(() => {
   height: 40vh;
   min-height: 300px;
   background-color: var(--color-bg);
-  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('@/assets/images/tea/tea-plantation.jpg');
+  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('@/assets/images/tea/VCG211522801755.png');
   background-size: cover;
   background-position: center;
   display: flex;
@@ -325,26 +257,37 @@ onMounted(() => {
   }
 }
 
-// 联系内容
-.contact-content {
+// 联系内容区域
+.contact-section {
   padding: 6rem 0;
+  background-color: var(--color-bg);
   
-  &__grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 4rem;
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+  
+  @media (max-width: 768px) {
+    padding: 4rem 0;
+  }
+  
+  @media (max-width: 576px) {
+    padding: 3rem 0;
     
-    @media (max-width: 992px) {
-      grid-template-columns: 1fr;
-      gap: 4rem;
+    .container {
+      padding: 0 1.5rem;
     }
   }
 }
 
-// 联系表单
-.contact-form {
+.section-title {
+  text-align: center;
+  margin-bottom: 4rem;
+  
   h2 {
-    margin-bottom: 1.5rem;
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
     
     span {
       color: var(--color-accent);
@@ -352,78 +295,69 @@ onMounted(() => {
   }
   
   p {
-    margin-bottom: 2rem;
-    color: #ccc;
-    line-height: 1.6;
+    color: #aaa;
+    max-width: 700px;
+    margin: 0 auto;
+    font-size: 1.1rem;
   }
   
-  .form-group {
-    margin-bottom: 1.5rem;
+  @media (max-width: 576px) {
+    margin-bottom: 2.5rem;
     
-    label {
-      display: block;
-      margin-bottom: 0.5rem;
-      font-weight: 600;
+    h2 {
+      font-size: 2rem;
     }
     
-    input, textarea {
-      width: 100%;
-      padding: 0.8rem 1rem;
-      background-color: rgba(255, 255, 255, 0.05);
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      color: var(--color-text);
-      border-radius: 5px;
+    p {
       font-size: 1rem;
-      transition: var(--transition);
-      
-      &:focus {
-        outline: none;
-        border-color: var(--color-accent);
-      }
-      
-      &::placeholder {
-        color: #666;
-      }
     }
-    
-    textarea {
-      resize: vertical;
-    }
-  }
-  
-  .btn {
-    width: 100%;
-    margin-top: 1rem;
-    
-    &:disabled {
-      opacity: 0.7;
-      cursor: not-allowed;
-    }
-  }
-  
-  .form-message {
-    margin-top: 1.5rem;
-    padding: 1rem;
-    background-color: rgba(156, 123, 46, 0.2);
-    border: 1px solid var(--color-accent);
-    border-radius: 5px;
-    color: var(--color-accent);
-    text-align: center;
   }
 }
 
-// 联系信息
 .contact-info {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  width: 100%;
+  margin: 0 auto;
+  
+  @media (max-width: 992px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+  }
+
   &__item {
+    background-color: #121212;
+    border-radius: 8px;
+    padding: 20px;
+    height: auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    transition: all 0.3s ease;
+    border: 1px solid transparent;
+
+    &:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+      border-color: var(--color-accent);
+    }
+  }
+  
+  &__link {
     display: flex;
-    margin-bottom: 2.5rem;
+    align-items: center;
+    text-decoration: none;
+    color: var(--color-text);
+    width: 100%;
   }
   
   &__icon {
-    margin-right: 1.5rem;
+    margin-right: 20px;
     width: 50px;
     height: 50px;
-    background-color: rgba(156, 123, 46, 0.2);
+    background-color: #282828;
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -432,78 +366,41 @@ onMounted(() => {
     
     svg {
       color: var(--color-accent);
+      width: 24px;
+      height: 24px;
     }
   }
   
   &__content {
+    flex: 1;
+    
     h3 {
-      font-size: 1.2rem;
-      margin-bottom: 0.5rem;
+      font-size: 1.1rem;
+      margin-bottom: 5px;
+      color: #fff;
+      font-weight: 500;
     }
     
     p {
-      color: #ccc;
-      line-height: 1.6;
-      
-      a {
-        color: #ccc;
-        transition: var(--transition);
-        
-        &:hover {
-          color: var(--color-accent);
-        }
-      }
-    }
-  }
-  
-  &__social {
-    h3 {
-      font-size: 1.2rem;
-      margin-bottom: 1rem;
-    }
-    
-    .social-links {
-      display: flex;
-      gap: 1rem;
-      
-      a {
-        width: 40px;
-        height: 40px;
-        background-color: rgba(255, 255, 255, 0.05);
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        transition: var(--transition);
-        
-        &:hover {
-          background-color: var(--color-accent);
-          
-          svg {
-            color: var(--color-bg);
-          }
-        }
-        
-        svg {
-          color: var(--color-text);
-          transition: var(--transition);
-        }
-      }
+      color: #999;
+      margin: 0;
+      font-size: 0.95rem;
     }
   }
 }
 
 // 地图区域
 .map-section {
-  height: 400px;
+  height: 500px;
   position: relative;
+  margin: 2rem 0;
 }
 
 .map-placeholder {
   width: 100%;
   height: 100%;
   background-color: var(--color-secondary);
-  background-image: url('@/assets/images/tea/tea-plantation.jpg');
+  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.8)), url('@/assets/images/tea/VCG211522801755.png');
   background-size: cover;
   background-position: center;
   position: relative;
@@ -515,7 +412,8 @@ onMounted(() => {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.7);
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1;
   }
 }
 
@@ -526,10 +424,12 @@ onMounted(() => {
   transform: translate(-50%, -50%);
   background-color: rgba(0, 0, 0, 0.8);
   padding: 2rem;
-  border-radius: 5px;
+  border-radius: 8px;
   text-align: center;
   width: 90%;
-  max-width: 400px;
+  max-width: 700px;
+  z-index: 2;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
   
   h3 {
     font-size: 1.5rem;
@@ -541,11 +441,15 @@ onMounted(() => {
     margin-bottom: 1.5rem;
     color: #ccc;
   }
-  
-  .btn--small {
-    padding: 0.6rem 1.5rem;
-    font-size: 0.9rem;
-  }
+}
+
+#map {
+  width: 100%;
+  height: 350px;
+  border-radius: 6px;
+  overflow: hidden;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+  z-index: 5;
 }
 
 // FAQ区域

@@ -2,62 +2,105 @@
   <footer class="footer">
     <div class="container">
       <div class="footer__content">
-
+        <div class="footer__info">
+          <div class="footer__logo">
+            <h2>恩施<span>富硒茶</span></h2>
+            <p>来自世界硒都的优质茶叶</p>
+          </div>
+          <div class="footer__social">
+            <a href="https://t.me/EnShiTea" target="_blank" title="Telegram">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21.198 2.433a2.242 2.242 0 0 0-1.022.215l-16.5 7.5a2.25 2.25 0 0 0 .126 4.303l3.898 1.205 2.25 6.75c.226.674.787 1.174 1.5 1.174.48 0 .904-.22 1.184-.535l1.76-2.052 5.45 3.63a2.251 2.251 0 0 0 3.256-1.485l3-16.5a2.25 2.25 0 0 0-2.902-2.705"/>
+              </svg>
+            </a>
+            <a href="https://www.facebook.com/profile.php?id=61578685470698&mibextid=wwXIfr&mibextid=wwXIfr" target="_blank" title="Facebook">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
+              </svg>
+            </a>
+            <a href="mailto:EnShiTea@outlook.com" title="邮箱">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                <polyline points="22,6 12,13 2,6"></polyline>
+              </svg>
+            </a>
+          </div>
+        </div>
         
         <div class="footer__links">
           <div class="footer__links-group">
-            <h3>导航</h3>
+            <h3>快速导航</h3>
             <ul>
               <li><router-link to="/">首页</router-link></li>
-              <li><router-link to="/about">关于</router-link></li>
-              <li><router-link to="/work">产品</router-link></li>
-              <li><router-link to="/timeline">工艺</router-link></li>
-              <li><router-link to="/contact">联系</router-link></li>
+              <li><router-link to="/about">关于我们</router-link></li>
+              <li><router-link to="/work">产品展示</router-link></li>
+              <li><router-link to="/timeline">制茶工艺</router-link></li>
+              <li><router-link to="/contact">联系我们</router-link></li>
             </ul>
           </div>
           
           <div class="footer__links-group">
-            <h3>联系我们</h3>
+            <h3>产品系列</h3>
+            <ul>
+              <li><a href="/work#green-tea">富硒绿茶</a></li>
+              <li><a href="/work#black-tea">富硒红茶</a></li>
+              <li><a href="/work#flower-tea">特色花茶</a></li>
+              <li><a href="/work#gift-sets">精品礼盒</a></li>
+              <li><a href="/work#seasonal">限定季节款</a></li>
+            </ul>
+          </div>
+          
+          <div class="footer__links-group">
+            <h3>关于茶叶</h3>
+            <ul>
+              <li><a href="/about#tea-benefits">硒元素功效</a></li>
+              <li><a href="/about#brewing">冲泡指南</a></li>
+              <li><a href="/about#storage">保存方法</a></li>
+              <li><a href="/contact#faq">常见问题</a></li>
+              <li><a href="/timeline">茶叶历史</a></li>
+            </ul>
+          </div>
+          
+          <div class="footer__links-group">
+            <h3>联系方式</h3>
             <ul>
               <li>
-                <a href="mailto:EnShiTea@outlook.com" class="email-link">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="#e67e22" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <a href="mailto:EnShiTea@outlook.com" class="icon-link">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                     <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
                     <polyline points="22,6 12,13 2,6"></polyline>
                   </svg>
-                  EnShiTea@outlook.com
+                  <span>EnShiTea@outlook.com</span>
                 </a>
               </li>
-              <li class="flex items-start gap-2">
-                <a href="https://t.me/yourchannelname" class="telegram-link">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M21.198 2.433a2.242 2.242 0 0 0-1.022.215l-16.5 7.5a2.25 2.25 0 0 0 .126 4.303l3.898 1.205 2.25 6.75c.226.674.787 1.174 1.5 1.174.48 0 .904-.22 1.184-.535l1.76-2.052 5.45 3.63a2.251 2.251 0 0 0 3.256-1.485l3-16.5a2.25 2.25 0 0 0-2.902-2.705" />
+              <li>
+                <a href="https://t.me/EnShiTea" class="icon-link" target="_blank">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21.198 2.433a2.242 2.242 0 0 0-1.022.215l-16.5 7.5a2.25 2.25 0 0 0 .126 4.303l3.898 1.205 2.25 6.75c.226.674.787 1.174 1.5 1.174.48 0 .904-.22 1.184-.535l1.76-2.052 5.45 3.63a2.251 2.251 0 0 0 3.256-1.485l3-16.5a2.25 2.25 0 0 0-2.902-2.705"/>
                   </svg>
-                  
+                  <span>@EnShiTea</span>
                 </a>
-                <img class="w-100px" src="../assets/images/telegram.png" alt="">
-
+              </li>
+              <li>
+                <div class="icon-link">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                    <circle cx="12" cy="10" r="3"></circle>
+                  </svg>
+                  <span>湖北省恩施土家族苗族自治州</span>
+                </div>
               </li>
             </ul>
           </div>
-
         </div>
-      </div>
-      
-      <div class="footer__newsletter">
-        <h3>订阅我们的通讯</h3>
-        <p>获取最新的产品资讯</p>
-        <form @submit.prevent="subscribeNewsletter">
-          <input type="email" placeholder="您的电子邮箱" v-model="email" required />
-          <button type="submit" class="btn">订阅</button>
-        </form>
       </div>
       
       <div class="footer__bottom">
         <p>&copy; {{ new Date().getFullYear() }} 恩施富硒茶. 保留所有权利.</p>
         <div class="footer__bottom-links">
-          <a href="#">隐私政策</a>
-          <a href="#">使用条款</a>
+          <a href="/privacy">隐私政策</a>
+          <a href="/terms">使用条款</a>
+          <a href="/sitemap">网站地图</a>
         </div>
       </div>
     </div>
@@ -65,15 +108,6 @@
 </template>
 
 <script setup>
-import { ref, getCurrentInstance } from 'vue'
-const { proxy } = getCurrentInstance()
-const email = ref('')
-
-const subscribeNewsletter = () => {
-  // 这里可以添加订阅逻辑
-  proxy.$message.success('订阅成功！')
-  email.value = ''
-}
 </script>
 
 <style lang="scss" scoped>
@@ -83,12 +117,34 @@ const subscribeNewsletter = () => {
   
   &__content {
     display: grid;
-    grid-template-columns: 1fr 2fr;
+    grid-template-columns: 1fr 3fr;
     gap: 3rem;
     margin-bottom: 3rem;
     
-    @media (max-width: 768px) {
+    @media (max-width: 992px) {
       grid-template-columns: 1fr;
+    }
+  }
+  
+  &__info {
+    @media (max-width: 992px) {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      
+      .footer__logo {
+        margin-bottom: 1rem;
+      }
+    }
+    
+    @media (max-width: 576px) {
+      flex-direction: column;
+      align-items: flex-start;
+      
+      .footer__social {
+        margin-top: 1.5rem;
+      }
     }
   }
   
@@ -105,13 +161,46 @@ const subscribeNewsletter = () => {
     p {
       color: #999;
       font-size: 1rem;
+      margin-bottom: 1.5rem;
+    }
+  }
+  
+  &__social {
+    display: flex;
+    gap: 1.2rem;
+    
+    a {
+      width: 40px;
+      height: 40px;
+      background-color: rgba(255, 255, 255, 0.05);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #ccc;
+      transition: all 0.3s ease;
+      
+      &:hover {
+        background-color: var(--color-accent);
+        color: var(--color-bg);
+        transform: translateY(-5px);
+      }
+      
+      svg {
+        width: 18px;
+        height: 18px;
+      }
     }
   }
   
   &__links {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     gap: 2rem;
+    
+    @media (max-width: 992px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
     
     @media (max-width: 576px) {
       grid-template-columns: 1fr;
@@ -124,10 +213,24 @@ const subscribeNewsletter = () => {
       font-size: 1.2rem;
       margin-bottom: 1.5rem;
       color: var(--color-accent);
+      position: relative;
+      padding-bottom: 0.8rem;
+      
+      &:after {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 40px;
+        height: 2px;
+        background-color: var(--color-accent);
+      }
     }
     
     ul {
       list-style: none;
+      padding: 0;
+      margin: 0;
       
       li {
         margin-bottom: 0.8rem;
@@ -135,83 +238,48 @@ const subscribeNewsletter = () => {
         a {
           color: #ccc;
           transition: var(--transition);
+          position: relative;
+          padding-left: 0;
+          display: inline-block;
+          
+          &:before {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -2px;
+            width: 0;
+            height: 1px;
+            background-color: var(--color-accent);
+            transition: width 0.3s ease;
+          }
           
           &:hover {
             color: var(--color-accent);
+            
+            &:before {
+              width: 100%;
+            }
           }
         }
-
-        .telegram-link {
+        
+        .icon-link {
           display: flex;
           align-items: center;
           gap: 0.5rem;
-          color: var(--color-text);
-          transition: color 0.3s ease;
+          color: #ccc;
+          
+          svg {
+            color: var(--color-accent);
+            flex-shrink: 0;
+          }
+          
+          span {
+            font-size: 0.9rem;
+          }
           
           &:hover {
             color: var(--color-accent);
           }
-          
-          svg {
-            color: var(--color-accent);
-          }
-        }
-      }
-    }
-  }
-  
-  &__social {
-    display: flex;
-    gap: 1rem;
-    
-    a {
-      color: #ccc;
-      transition: var(--transition);
-      
-      &:hover {
-        color: var(--color-accent);
-      }
-    }
-  }
-  
-  &__newsletter {
-    margin-bottom: 3rem;
-    
-    h3 {
-      font-size: 1.2rem;
-      margin-bottom: 0.5rem;
-      color: var(--color-accent);
-    }
-    
-    p {
-      color: #ccc;
-      margin-bottom: 1.5rem;
-    }
-    
-    form {
-      display: flex;
-      gap: 1rem;
-      max-width: 500px;
-      
-      @media (max-width: 576px) {
-        flex-direction: column;
-      }
-      
-      input {
-        flex: 1;
-        padding: 0.8rem 1rem;
-        background-color: rgba(255, 255, 255, 0.1);
-        border: 1px solid rgba(255, 255, 255, 0.2);
-        color: var(--color-text);
-        font-size: 1rem;
-        
-        &::placeholder {
-          color: #999;
-        }
-        
-        &:focus {
-          outline: none;
-          border-color: var(--color-accent);
         }
       }
     }
@@ -224,7 +292,7 @@ const subscribeNewsletter = () => {
     padding-top: 2rem;
     border-top: 1px solid rgba(255, 255, 255, 0.1);
     
-    @media (max-width: 576px) {
+    @media (max-width: 768px) {
       flex-direction: column;
       gap: 1rem;
       text-align: center;
@@ -240,47 +308,44 @@ const subscribeNewsletter = () => {
       display: flex;
       gap: 1.5rem;
       
+      @media (max-width: 576px) {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1rem;
+      }
+      
       a {
         color: #999;
         font-size: 0.9rem;
+        position: relative;
+        
+        &:after {
+          content: '';
+          position: absolute;
+          left: 0;
+          bottom: -2px;
+          width: 0;
+          height: 1px;
+          background-color: var(--color-accent);
+          transition: width 0.3s ease;
+        }
         
         &:hover {
           color: var(--color-accent);
+          
+          &:after {
+            width: 100%;
+          }
         }
       }
     }
   }
 }
 
-.email-link, .telegram-link {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  
-  svg {
-    flex-shrink: 0;
-  }
-}
-
-.telegram-link img {
-  width: 24px;
-  height: 24px;
-  object-fit: contain;
-}
-
 // 移动端优化
 @media (max-width: 768px) {
   .footer {
-    &__grid {
-      grid-template-columns: 1fr;
-      gap: 2rem;
-    }
-    
-    &__bottom {
-      flex-direction: column;
-      gap: 1rem;
-      text-align: center;
-    }
+    padding: 4rem 0 2rem;
   }
 }
 
@@ -290,72 +355,18 @@ const subscribeNewsletter = () => {
     
     &__logo {
       h2 {
-        font-size: 1.5rem;
-        margin-bottom: 0.8rem;
+        font-size: 1.8rem;
       }
       
       p {
         font-size: 0.9rem;
-        margin-bottom: 1rem;
       }
     }
     
-    &__links {
+    &__links-group {
       h3 {
         font-size: 1.1rem;
-        margin-bottom: 0.8rem;
-      }
-      
-      ul {
-        li {
-          margin-bottom: 0.5rem;
-          
-          a {
-            font-size: 0.9rem;
-          }
-        }
-      }
-    }
-    
-    &__contact {
-      h3 {
-        font-size: 1.1rem;
-        margin-bottom: 0.8rem;
-      }
-      
-      p {
-        font-size: 0.9rem;
-        margin-bottom: 0.5rem;
-      }
-    }
-    
-    &__social {
-      margin-top: 1rem;
-      
-      a {
-        width: 35px;
-        height: 35px;
-        
-        svg {
-          width: 18px;
-          height: 18px;
-        }
-      }
-    }
-    
-    &__bottom {
-      margin-top: 2rem;
-      padding-top: 1.5rem;
-      
-      &-copyright {
-        font-size: 0.8rem;
-      }
-      
-      &-links {
-        a {
-          font-size: 0.8rem;
-          margin-left: 0.8rem;
-        }
+        margin-bottom: 1.2rem;
       }
     }
   }
