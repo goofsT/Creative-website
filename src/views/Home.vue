@@ -8,16 +8,16 @@
     <section class="hero">
       
       <div class="hero__content">
-        <h1>恩施<span class="color-red">富硒茶</span></h1>
-        <h2>天赐恩山好水，天然富硒滋养</h2>
-        <p>—— 高山云雾 · 原生态手工茶 ——</p>
+        <h1 v-html="t('home.hero.title')"></h1>
+        <h2>{{ t('home.hero.subtitle') }}</h2>
+        <p>{{ t('home.hero.description') }}</p>
         <div class="hero__buttons">
-          <router-link to="/work" class="btn">探索产品</router-link>
-          <router-link to="/contact" class="btn btn--outline">联系我们</router-link>
+          <router-link :to="currentLanguage === 'en' ? '/en/products' : '/work'" class="btn">{{ t('common.exploreProducts') }}</router-link>
+          <router-link :to="currentLanguage === 'en' ? '/en/contact' : '/contact'" class="btn btn--outline">{{ t('common.contactUs') }}</router-link>
         </div>
       </div>
       <div class="hero__scroll">
-        <span>向下滚动</span>
+        <span>{{ currentLanguage === 'en' ? 'Scroll Down' : '向下滚动' }}</span>
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
       </div>
     </section>
@@ -25,17 +25,17 @@
     <!-- 公告区域 -->
     <section class="announcements">
       <div class="container">
-        <h2>茶叶<span>资讯</span></h2>
+        <h2 v-html="t('home.announcements.title')"></h2>
         <div class="flex gap-4 justify-between">
           <div class="announcement-card">
-            <h3>新茶</h3>
-            <h4>2025春茶预售开始</h4>
-            <p>恩施高山云雾富硒绿茶，限量发售</p>
+            <h3>{{ t('home.announcements.new') }}</h3>
+            <h4>{{ t('home.announcements.newTeaTitle') }}</h4>
+            <p>{{ t('home.announcements.newTeaDesc') }}</p>
           </div>
           <div class="announcement-card">
-            <h3>活动</h3>
-            <h4>7折品尝</h4>
-            <p>免费品尝2025年春茶</p>
+            <h3>{{ t('home.announcements.event') }}</h3>
+            <h4>{{ t('home.announcements.eventTitle') }}</h4>
+            <p>{{ t('home.announcements.eventDesc') }}</p>
           </div>
         </div>
       </div>
@@ -45,8 +45,8 @@
     <section class="quote">
       <div class="container">
         <blockquote>
-          <p>"好茶，如好友，淡而不薄，浓而不苦，回味悠长"</p>
-          <cite>- 恩施茶艺师</cite>
+          <p>{{ t('home.quote.text') }}</p>
+          <cite>{{ t('home.quote.author') }}</cite>
         </blockquote>
       </div>
     </section>
@@ -91,11 +91,11 @@
     <section class="newsletter">
       <div class="container">
         <div class="newsletter__content">
-          <h2>订阅<span>茶讯</span></h2>
-          <p>订阅我们的电子通讯，获取新茶上市、茶艺活动和限时优惠信息。</p>
+          <h2 v-html="t('home.newsletter.title')"></h2>
+          <p>{{ t('home.newsletter.description') }}</p>
           <form @submit.prevent="subscribeNewsletter">
-            <input type="email" placeholder="您的电子邮箱" v-model="email" required />
-            <button type="submit" class="btn">订阅</button>
+            <input type="email" :placeholder="t('common.email')" v-model="email" required />
+            <button type="submit" class="btn">{{ t('common.subscribe') }}</button>
           </form>
         </div>
       </div>
@@ -104,18 +104,60 @@
 </template>
 
 <script setup>
-import { ref, onMounted } from 'vue'
+import { ref, onMounted, watch } from 'vue'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
+import { currentLanguage, t } from '../i18n'
+import { useRouter } from 'vue-router'
 
 gsap.registerPlugin(ScrollTrigger)
 
+const router = useRouter()
 const email = ref('')
 
 const subscribeNewsletter = () => {
-  alert('感谢订阅！')
+  alert(t('common.subscribeSuccess'))
   email.value = ''
 }
+
+// 监听语言变化，更新路由
+watch(currentLanguage, (newLang) => {
+  const currentPath = router.currentRoute.value.path
+  let newPath
+
+  if (newLang === 'en') {
+    // 如果当前不是英文路径，则添加/en前缀
+    if (!currentPath.startsWith('/en/')) {
+      if (currentPath === '/') {
+        newPath = '/en/'
+      } else if (currentPath === '/work') {
+        newPath = '/en/products'
+      } else if (currentPath === '/timeline') {
+        newPath = '/en/process'
+      } else {
+        newPath = `/en${currentPath}`
+      }
+    }
+  } else {
+    // 如果当前是英文路径，则移除/en前缀
+    if (currentPath.startsWith('/en/')) {
+      if (currentPath === '/en/') {
+        newPath = '/'
+      } else if (currentPath === '/en/products') {
+        newPath = '/work'
+      } else if (currentPath === '/en/process') {
+        newPath = '/timeline'
+      } else {
+        newPath = currentPath.replace('/en', '')
+      }
+    }
+  }
+
+  // 如果路径变化了，则导航到新路径
+  if (newPath && newPath !== currentPath) {
+    router.push(newPath)
+  }
+})
 
 onMounted(() => {
   // 视频滚动视差效果
@@ -156,7 +198,6 @@ onMounted(() => {
     },
     y: 50,
     opacity: 0,
-    stagger: 0.2,
     duration: 0.8
   })
 
@@ -168,27 +209,6 @@ onMounted(() => {
     scale: 0.9,
     opacity: 0,
     duration: 1
-  })
-
-  gsap.from('.featured-works h2', {
-    scrollTrigger: {
-      trigger: '.featured-works',
-      start: 'top 80%',
-    },
-    y: 50,
-    opacity: 0,
-    duration: 0.8
-  })
-
-  gsap.from('.work-card', {
-    scrollTrigger: {
-      trigger: '.featured-works__grid',
-      start: 'top 80%',
-    },
-    y: 50,
-    opacity: 0,
-    stagger: 0.2,
-    duration: 0.8
   })
 
   gsap.from('.newsletter__content', {
@@ -585,12 +605,6 @@ onMounted(() => {
       grid-template-columns: 1fr;
     }
   }
-  
-  .featured-works {
-    &__grid {
-      grid-template-columns: 1fr;
-    }
-  }
 }
 
 @media (max-width: 576px) {
@@ -658,16 +672,6 @@ onMounted(() => {
     
     &__title {
       font-size: 1.1rem;
-    }
-  }
-  
-  .featured-works {
-    &__item {
-      margin-bottom: 1.5rem;
-      
-      &-title {
-        font-size: 1.2rem;
-      }
     }
   }
 }

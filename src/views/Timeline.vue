@@ -3,7 +3,7 @@
     <!-- 页面标题 -->
     <section class="page-header">
       <div class="container">
-        <h1>茶叶<span>制作过程</span></h1>
+        <h1 v-html="t('timeline.title')"></h1>
       </div>
     </section>
     
@@ -11,7 +11,7 @@
     <section class="timeline-content">
       <div class="container">
         <!-- 绿茶制作过程 -->
-        <h2 class="tea-type-title">绿茶<span>制作工艺</span></h2>
+        <h2 class="tea-type-title" v-html="t('timeline.greenTitle')"></h2>
         
         <div class="timeline__wrapper">
           <div class="timeline__line"></div>
@@ -23,19 +23,19 @@
             :class="{ 'timeline-item--right': index % 2 !== 0 }"
           >
             <div class="timeline-item__content">
-              <div class="timeline-item__year">{{ item.year }}</div>
-              <h3>{{ item.title }}</h3>
-              <p>{{ item.description }}</p>
+              <div class="timeline-item__year">{{ t(item.year) }}</div>
+              <h3>{{ t(item.title) }}</h3>
+              <p>{{ t(item.description) }}</p>
               
               <div class="timeline-item__image" v-if="item.image">
-                <img :src="item.image" :alt="item.title" />
+                <img :src="item.image" :alt="t(item.title)" />
               </div>
               
               <div class="timeline-item__achievements" v-if="item.achievements && item.achievements.length">
-                <h4>主要工艺要点</h4>
+                <h4>{{ t('timeline.achievementsTitle') }}</h4>
                 <ul>
                   <li v-for="(achievement, i) in item.achievements" :key="i">
-                    {{ achievement }}
+                    {{ t(achievement) }}
                   </li>
                 </ul>
               </div>
@@ -45,7 +45,7 @@
         </div>
         
         <!-- 红茶制作过程 -->
-        <h2 class="tea-type-title">红茶<span>制作工艺</span></h2>
+        <h2 class="tea-type-title" v-html="t('timeline.blackTitle')"></h2>
         
         <div class="timeline__wrapper">
           <div class="timeline__line"></div>
@@ -57,19 +57,19 @@
             :class="{ 'timeline-item--right': index % 2 !== 0 }"
           >
             <div class="timeline-item__content">
-              <div class="timeline-item__year">{{ item.year }}</div>
-              <h3>{{ item.title }}</h3>
-              <p>{{ item.description }}</p>
+              <div class="timeline-item__year">{{ t(item.year) }}</div>
+              <h3>{{ t(item.title) }}</h3>
+              <p>{{ t(item.description) }}</p>
               
               <div class="timeline-item__image" v-if="item.image">
-                <img :src="item.image" :alt="item.title" />
+                <img :src="item.image" :alt="t(item.title)" />
               </div>
               
               <div class="timeline-item__achievements" v-if="item.achievements && item.achievements.length">
-                <h4>主要工艺要点</h4>
+                <h4>{{ t('timeline.achievementsTitle') }}</h4>
                 <ul>
                   <li v-for="(achievement, i) in item.achievements" :key="i">
-                    {{ achievement }}
+                    {{ t(achievement) }}
                   </li>
                 </ul>
               </div>
@@ -83,15 +83,15 @@
     <!-- 未来展望 -->
     <section class="future-vision">
       <div class="container">
-        <h2>茶文化<span>传承</span></h2>
+        <h2 v-html="t('timeline.futureTitle')"></h2>
         <div class="future-vision__content">
           <div class="future-vision__text">
-            <p>富硒茶的制作工艺凝聚了数百年的智慧结晶，我们致力于将这一传统工艺与现代科技相结合，创造更健康、更优质的茶叶产品。</p>
-            <p>我们期待与您一起，品味自然馈赠的健康茶饮，共同传承中华茶文化。</p>
-            <router-link to="/contact" class="btn">联系我们</router-link>
+            <p>{{ t('timeline.futureP1') }}</p>
+            <p>{{ t('timeline.futureP2') }}</p>
+            <router-link :to="currentLanguage === 'en' ? '/en/contact' : '/contact'" class="btn">{{ t('common.contactUs') }}</router-link>
           </div>
           <div class="future-vision__image">
-            <img src="/src/assets/images/tea/tea-cup.jpg" alt="茶文化传承" />
+            <img src="/src/assets/images/tea/chuancheng.jpg" :alt="t('timeline.futureImageAlt')" />
           </div>
         </div>
       </div>
@@ -100,118 +100,135 @@
 </template>
 
 <script setup>
-import { ref, onMounted } from 'vue'
+import { ref, onMounted, computed, watch } from 'vue'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
+import { t, currentLanguage } from '@/i18n/index.js'
 
 gsap.registerPlugin(ScrollTrigger)
 
 // 绿茶时间线数据
-const greenTeaItems = ref([
-  {
-    year: '第一步',
-    title: '鲜叶采摘',
-    description: '富硒绿茶的制作始于精心采摘。采茶工人在清晨露水未干时采摘一芽一叶或一芽二叶的嫩芽，确保茶叶品质的基础。富硒土壤培育的茶树，其叶片含有丰富的硒元素，对人体健康极为有益。',
-    image: '/src/assets/images/tea/pexels-gu-ko-2150570603-31756541.jpg',
-    achievements: [
-      '选择富硒土壤区域的茶园',
-      '严格把控采摘标准',
-      '保持鲜叶完整度'
-    ]
-  },
-  {
-    year: '第二步',
-    title: '杀青工艺',
-    description: '绿茶制作的关键步骤是杀青，通过高温迅速破坏茶叶中的酶活性，阻止氧化，保留茶叶的绿色和鲜爽。杀青通常采用锅炒或蒸汽方式，温度控制在120-130℃，时间约为3-5分钟。',
-    image: '/src/assets/images/tea/VCG211244284652.png',
-    achievements: [
-      '精准控制杀青温度',
-      '掌握茶叶变化状态',
-      '保留茶叶中的有效成分'
-    ]
-  },
-  {
-    year: '第三步',
-    title: '揉捻成型',
-    description: '杀青后的茶叶需要通过揉捻使其成型。揉捻过程使茶叶卷曲成条形或珠形，同时促进茶汁外溢，增强茶叶风味。绿茶的揉捻力度较轻，以保持茶叶的自然形态。',
-    image: '/src/assets/images/tea/VCG211319770239.jpg',
-    achievements: [
-      '控制揉捻力度和时间',
-      '形成特色茶形',
-      '保持茶叶完整性'
-    ]
-  },
-  {
-    year: '第四步',
-    title: '烘干精制',
-    description: '最后一步是烘干，将茶叶中的水分降至5%以下，确保茶叶可以长期保存。绿茶烘干温度一般控制在80-100℃，烘干过程还能进一步形成茶叶的香气。烘干后的茶叶经过筛选、分级、包装，成为最终的富硒绿茶产品。',
-    image: '/src/assets/images/tea/VCG211522801755.png',
-    achievements: [
-      '控制烘干温度曲线',
-      '确保茶叶均匀干燥',
-      '精细分级包装'
-    ]
-  }
-])
-
+const greenTeaItems = ref([])
 // 红茶时间线数据
-const blackTeaItems = ref([
-  {
-    year: '第一步',
-    title: '鲜叶采摘',
-    description: '富硒红茶的制作同样始于精心采摘。红茶一般采摘一芽二叶或一芽三叶，相比绿茶可以采用稍成熟的叶片。富硒土壤培育的茶树所产茶叶，富含硒元素，具有更高的营养价值。',
-    image: '/src/assets/images/tea/pexels-anna-pou-8330364.jpg',
-    achievements: [
-      '选择富硒土壤茶园',
-      '采摘适合制作红茶的茶叶',
-      '确保鲜叶质量'
-    ]
-  },
-  {
-    year: '第二步',
-    title: '萎凋工艺',
-    description: '红茶制作中萎凋是非常重要的步骤。采摘的鲜叶需要铺放在萎凋槽中，在适宜的温度和湿度下进行12-18小时的萎凋。这一过程中，茶叶失去部分水分，叶片变软，为后续发酵做准备。',
-    image: '/src/assets/images/tea/VCG211186850243.jpg',
-    achievements: [
-      '控制萎凋环境温湿度',
-      '定期翻动茶叶确保均匀萎凋',
-      '判断萎凋程度的适宜性'
-    ]
-  },
-  {
-    year: '第三步',
-    title: '揉捻破碎',
-    description: '萎凋后的茶叶需要进行揉捻，这一步骤会破坏茶叶细胞组织，使茶多酚与氧气充分接触，为后续发酵创造条件。红茶的揉捻力度较大，时间也较长，以充分破坏叶片组织。',
-    image: '/src/assets/images/tea/VCG211574899634.jpg',
-    achievements: [
-      '控制揉捻力度和时间',
-      '确保茶叶细胞充分破碎',
-      '促进茶汁外溢'
-    ]
-  },
-  {
-    year: '第四步',
-    title: '发酵工艺',
-    description: '红茶制作的特色在于发酵过程。揉捻后的茶叶在适宜的温湿度环境下进行氧化发酵，茶多酚在酶的作用下氧化为茶黄素、茶红素等物质，形成红茶特有的色泽、香气和滋味。',
-    image: '/src/assets/images/tea/VCG211514259609.jpg',
-    achievements: [
-      '控制发酵环境',
-      '监测发酵程度',
-      '把握最佳发酵时间点'
-    ]
-  },
-  {
-    year: '第五步',
-    title: '烘干精制',
-    description: '发酵完成后，需要通过烘干停止发酵过程并降低茶叶水分含量。红茶烘干温度一般为80-90℃，烘干过程还能进一步形成红茶特有的香气。烘干后的茶叶经过筛选、分级、包装，成为最终的富硒红茶产品。',
-    image: '/src/assets/images/tea/VCG211522801789.png',
-    achievements: [
-      '控制烘干温度和时间',
-      '确保茶叶均匀干燥',
-      '精细分级包装'
-    ]
-  }
-])
+const blackTeaItems = ref([])
+
+// 根据当前语言生成数据
+const generateItems = () => {
+  // 绿茶数据
+  greenTeaItems.value = [
+    {
+      year: 'timeline.green.step1.year',
+      title: 'timeline.green.step1.title',
+      description: 'timeline.green.step1.description',
+      image: '/src/assets/images/tea/pexels-gu-ko-2150570603-31756541.jpg',
+      achievements: [
+        'timeline.green.step1.achievements.0',
+        'timeline.green.step1.achievements.1',
+        'timeline.green.step1.achievements.2'
+      ]
+    },
+    {
+      year: 'timeline.green.step2.year',
+      title: 'timeline.green.step2.title',
+      description: 'timeline.green.step2.description',
+      image: '/src/assets/images/tea/shaqing.png',
+      achievements: [
+        'timeline.green.step2.achievements.0',
+        'timeline.green.step2.achievements.1',
+        'timeline.green.step2.achievements.2'
+      ]
+    },
+    {
+      year: 'timeline.green.step3.year',
+      title: 'timeline.green.step3.title',
+      description: 'timeline.green.step3.description',
+      image: '/src/assets/images/tea/roulian.jpg',
+      achievements: [
+        'timeline.green.step3.achievements.0',
+        'timeline.green.step3.achievements.1',
+        'timeline.green.step3.achievements.2'
+      ]
+    },
+    {
+      year: 'timeline.green.step4.year',
+      title: 'timeline.green.step4.title',
+      description: 'timeline.green.step4.description',
+      image: '/src/assets/images/tea/honggan1.jpg',
+      achievements: [
+        'timeline.green.step4.achievements.0',
+        'timeline.green.step4.achievements.1',
+        'timeline.green.step4.achievements.2'
+      ]
+    }
+  ]
+
+  // 红茶数据
+  blackTeaItems.value = [
+    {
+      year: 'timeline.black.step1.year',
+      title: 'timeline.black.step1.title',
+      description: 'timeline.black.step1.description',
+      image: '/src/assets/images/tea/pexels-gu-ko-2150570603-31756541.jpg',
+      achievements: [
+        'timeline.black.step1.achievements.0',
+        'timeline.black.step1.achievements.1',
+        'timeline.black.step1.achievements.2'
+      ]
+    },
+    {
+      year: 'timeline.black.step2.year',
+      title: 'timeline.black.step2.title',
+      description: 'timeline.black.step2.description',
+      image: '/src/assets/images/tea/honggan.jpg',
+      achievements: [
+        'timeline.black.step2.achievements.0',
+        'timeline.black.step2.achievements.1',
+        'timeline.black.step2.achievements.2'
+      ]
+    },
+    {
+      year: 'timeline.black.step3.year',
+      title: 'timeline.black.step3.title',
+      description: 'timeline.black.step3.description',
+      image: '/src/assets/images/tea/roulian.jpg',
+      achievements: [
+        'timeline.black.step3.achievements.0',
+        'timeline.black.step3.achievements.1',
+        'timeline.black.step3.achievements.2'
+      ]
+    },
+    {
+      year: 'timeline.black.step4.year',
+      title: 'timeline.black.step4.title',
+      description: 'timeline.black.step4.description',
+      image: '/src/assets/images/tea/fajiao.jpg',
+      achievements: [
+        'timeline.black.step4.achievements.0',
+        'timeline.black.step4.achievements.1',
+        'timeline.black.step4.achievements.2'
+      ]
+    },
+    {
+      year: 'timeline.black.step5.year',
+      title: 'timeline.black.step5.title',
+      description: 'timeline.black.step5.description',
+      image: '/src/assets/images/tea/hongchahonggan.jpg',
+      achievements: [
+        'timeline.black.step5.achievements.0',
+        'timeline.black.step5.achievements.1',
+        'timeline.black.step5.achievements.2'
+      ]
+    }
+  ]
+}
+
+// 初始生成数据
+generateItems()
+
+// 监听语言变化，重新生成数据
+watch(currentLanguage, () => {
+  generateItems()
+})
 
 // 原有的timelineItems不再使用，但保留以备不时之需
 const timelineItems = ref([])
@@ -323,7 +340,7 @@ onMounted(() => {
   height: 40vh;
   min-height: 300px;
   background-color: var(--color-bg);
-  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('/images/timeline-header.jpg');
+  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('/src/assets/images/tea/VCG211522801789.png');
   background-size: cover;
   background-position: center;
   display: flex;

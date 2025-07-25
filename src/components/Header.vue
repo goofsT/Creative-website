@@ -4,34 +4,31 @@
       <div class="header__content">
         <div class="header__logo">
           <router-link to="/">
-            <h1>富硒<span>茶</span></h1>
+            <h1 v-if="currentLanguage === 'zh'">富硒<span>茶</span></h1>
+            <h1 v-else>Se-<span>Tea</span></h1>
           </router-link>
         </div>
         
         <nav class="header__nav" :class="{ 'active': menuOpen }">
           <ul>
-            <li><router-link to="/" @click="closeMenu">首页</router-link></li>
-            <li><router-link to="/about" @click="closeMenu">关于</router-link></li>
-            <li><router-link to="/work" @click="closeMenu">产品</router-link></li>
-            <li><router-link to="/timeline" @click="closeMenu">工艺</router-link></li>
-            <li><router-link to="/contact" @click="closeMenu">联系</router-link></li>
+            <li><router-link to="/" @click="closeMenu">{{ t('nav.home') }}</router-link></li>
+            <li><router-link to="/about" @click="closeMenu">{{ t('nav.about') }}</router-link></li>
+            <li><router-link to="/work" @click="closeMenu">{{ t('nav.products') }}</router-link></li>
+            <li><router-link to="/timeline" @click="closeMenu">{{ t('nav.process') }}</router-link></li>
+            <li><router-link to="/research" @click="closeMenu">{{ t('nav.research') }}</router-link></li>
+            <li><router-link to="/contact" @click="closeMenu">{{ t('nav.contact') }}</router-link></li>
           </ul>
+          <LanguageSwitcher class="header__lang-switcher" />
         </nav>
         
-        <div class="header__social">
-          <a href="#" aria-label="Instagram">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
-          </a>
-          <a href="#" aria-label="Facebook">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
-          </a>
+        <div class="header__actions">
+          <LanguageSwitcher class="header__lang-switcher-desktop" />
+          <button class="header__menu-toggle" @click="toggleMenu" aria-label="菜单">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
         </div>
-        
-        <button class="header__menu-toggle" @click="toggleMenu" aria-label="菜单">
-          <span></span>
-          <span></span>
-          <span></span>
-        </button>
       </div>
     </div>
   </header>
@@ -39,6 +36,8 @@
 
 <script setup>
 import { ref, onMounted, onUnmounted } from 'vue'
+import LanguageSwitcher from './LanguageSwitcher.vue'
+import { currentLanguage, t } from '../i18n'
 
 const scrolled = ref(false)
 const menuOpen = ref(false)
@@ -99,6 +98,21 @@ onUnmounted(() => {
         color: var(--color-accent);
       }
     }
+  }
+  
+  &__actions {
+    display: flex;
+    align-items: center;
+  }
+  
+  &__lang-switcher {
+    display: none;
+    margin-top: 2rem;
+  }
+  
+  &__lang-switcher-desktop {
+    display: block;
+    margin-right: 1rem;
   }
   
   &__nav {
@@ -185,6 +199,7 @@ onUnmounted(() => {
       height: 100vh;
       background-color: var(--color-bg);
       display: flex;
+      flex-direction: column;
       align-items: center;
       justify-content: center;
       transition: var(--transition);
@@ -209,7 +224,11 @@ onUnmounted(() => {
       }
     }
     
-    &__social {
+    &__lang-switcher {
+      display: flex;
+    }
+    
+    &__lang-switcher-desktop {
       display: none;
     }
     
@@ -234,7 +253,7 @@ onUnmounted(() => {
     }
     
     &__nav {
-      width: 80px;
+      width: 80%;
       
       ul {
         li {

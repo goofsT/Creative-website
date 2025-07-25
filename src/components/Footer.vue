@@ -4,8 +4,9 @@
       <div class="footer__content">
         <div class="footer__info">
           <div class="footer__logo">
-            <h2>恩施<span>富硒茶</span></h2>
-            <p>来自世界硒都的优质茶叶</p>
+            <h2 v-if="currentLanguage === 'zh'">恩施<span>富硒茶</span></h2>
+            <h2 v-else>Se-<span>Tea</span></h2>
+            <p>{{ currentLanguage === 'zh' ? '来自世界硒都的优质茶叶' : 'Premium Tea from the World\'s Selenium Capital' }}</p>
           </div>
           <div class="footer__social">
             <a href="https://t.me/EnShiTea" target="_blank" title="Telegram">
@@ -18,7 +19,7 @@
                 <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
               </svg>
             </a>
-            <a href="mailto:EnShiTea@outlook.com" title="邮箱">
+            <a href="mailto:EnShiTea@outlook.com" :title="currentLanguage === 'zh' ? '邮箱' : 'Email'">
               <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
                 <polyline points="22,6 12,13 2,6"></polyline>
@@ -29,40 +30,41 @@
         
         <div class="footer__links">
           <div class="footer__links-group">
-            <h3>快速导航</h3>
+            <h3>{{ currentLanguage === 'zh' ? '快速导航' : 'Navigation' }}</h3>
             <ul>
-              <li><router-link to="/">首页</router-link></li>
-              <li><router-link to="/about">关于我们</router-link></li>
-              <li><router-link to="/work">产品展示</router-link></li>
-              <li><router-link to="/timeline">制茶工艺</router-link></li>
-              <li><router-link to="/contact">联系我们</router-link></li>
+              <li><router-link :to="currentLanguage === 'en' ? '/en/' : '/'">{{ t('nav.home') }}</router-link></li>
+              <li><router-link :to="currentLanguage === 'en' ? '/en/about' : '/about'">{{ t('nav.about') }}</router-link></li>
+              <li><router-link :to="currentLanguage === 'en' ? '/en/products' : '/work'">{{ t('nav.products') }}</router-link></li>
+              <li><router-link :to="currentLanguage === 'en' ? '/en/process' : '/timeline'">{{ t('nav.process') }}</router-link></li>
+              <li><router-link :to="currentLanguage === 'en' ? '/en/research' : '/research'">{{ t('nav.research') }}</router-link></li>
+              <li><router-link :to="currentLanguage === 'en' ? '/en/contact' : '/contact'">{{ t('nav.contact') }}</router-link></li>
             </ul>
           </div>
           
           <div class="footer__links-group">
-            <h3>产品系列</h3>
+            <h3>{{ currentLanguage === 'zh' ? '产品系列' : 'Products' }}</h3>
             <ul>
-              <li><a href="/work#green-tea">富硒绿茶</a></li>
-              <li><a href="/work#black-tea">富硒红茶</a></li>
-              <li><a href="/work#flower-tea">特色花茶</a></li>
-              <li><a href="/work#gift-sets">精品礼盒</a></li>
-              <li><a href="/work#seasonal">限定季节款</a></li>
+              <li><a :href="currentLanguage === 'en' ? '/en/products#green-tea' : '/work#green-tea'">{{ currentLanguage === 'zh' ? '富硒绿茶' : 'Selenium-Rich Green Tea' }}</a></li>
+              <li><a :href="currentLanguage === 'en' ? '/en/products#black-tea' : '/work#black-tea'">{{ currentLanguage === 'zh' ? '富硒红茶' : 'Selenium-Rich Black Tea' }}</a></li>
+              <li><a :href="currentLanguage === 'en' ? '/en/products#flower-tea' : '/work#flower-tea'">{{ currentLanguage === 'zh' ? '特色花茶' : 'Specialty Flower Tea' }}</a></li>
+              <li><a :href="currentLanguage === 'en' ? '/en/products#gift-sets' : '/work#gift-sets'">{{ currentLanguage === 'zh' ? '精品礼盒' : 'Premium Gift Sets' }}</a></li>
+              <li><a :href="currentLanguage === 'en' ? '/en/products#seasonal' : '/work#seasonal'">{{ currentLanguage === 'zh' ? '限定季节款' : 'Seasonal Specials' }}</a></li>
             </ul>
           </div>
           
           <div class="footer__links-group">
-            <h3>关于茶叶</h3>
+            <h3>{{ currentLanguage === 'zh' ? '关于茶叶' : 'About Tea' }}</h3>
             <ul>
-              <li><a href="/about#tea-benefits">硒元素功效</a></li>
-              <li><a href="/about#brewing">冲泡指南</a></li>
-              <li><a href="/about#storage">保存方法</a></li>
-              <li><a href="/contact#faq">常见问题</a></li>
-              <li><a href="/timeline">茶叶历史</a></li>
+              <li><a :href="currentLanguage === 'en' ? '/en/about#tea-benefits' : '/about#tea-benefits'">{{ currentLanguage === 'zh' ? '硒元素功效' : 'Selenium Benefits' }}</a></li>
+              <li><a :href="currentLanguage === 'en' ? '/en/about#brewing' : '/about#brewing'">{{ currentLanguage === 'zh' ? '冲泡指南' : 'Brewing Guide' }}</a></li>
+              <li><a :href="currentLanguage === 'en' ? '/en/about#storage' : '/about#storage'">{{ currentLanguage === 'zh' ? '保存方法' : 'Storage Tips' }}</a></li>
+              <li><a :href="currentLanguage === 'en' ? '/en/contact#faq' : '/contact#faq'">{{ currentLanguage === 'zh' ? '常见问题' : 'FAQ' }}</a></li>
+              <li><a :href="currentLanguage === 'en' ? '/en/process' : '/timeline'">{{ currentLanguage === 'zh' ? '茶叶历史' : 'Tea History' }}</a></li>
             </ul>
           </div>
           
           <div class="footer__links-group">
-            <h3>联系方式</h3>
+            <h3>{{ currentLanguage === 'zh' ? '联系方式' : 'Contact Us' }}</h3>
             <ul>
               <li>
                 <a href="mailto:EnShiTea@outlook.com" class="icon-link">
@@ -87,7 +89,7 @@
                     <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
                     <circle cx="12" cy="10" r="3"></circle>
                   </svg>
-                  <span>湖北省恩施土家族苗族自治州</span>
+                  <span>{{ currentLanguage === 'zh' ? '湖北省恩施土家族苗族自治州' : 'Enshi Tujia and Miao Autonomous Prefecture, Hubei, China' }}</span>
                 </div>
               </li>
             </ul>
@@ -96,11 +98,11 @@
       </div>
       
       <div class="footer__bottom">
-        <p>&copy; {{ new Date().getFullYear() }} 恩施富硒茶. 保留所有权利.</p>
+        <p>{{ t('footer.copyright') }}</p>
         <div class="footer__bottom-links">
-          <a href="/privacy">隐私政策</a>
-          <a href="/terms">使用条款</a>
-          <a href="/sitemap">网站地图</a>
+          <a :href="currentLanguage === 'en' ? '/en/privacy' : '/privacy'">{{ t('footer.privacyPolicy') }}</a>
+          <a :href="currentLanguage === 'en' ? '/en/terms' : '/terms'">{{ t('footer.termsOfService') }}</a>
+          <a :href="currentLanguage === 'en' ? '/en/sitemap' : '/sitemap'">{{ currentLanguage === 'zh' ? '网站地图' : 'Sitemap' }}</a>
         </div>
       </div>
     </div>
@@ -108,6 +110,7 @@
 </template>
 
 <script setup>
+import { currentLanguage, t } from '../i18n'
 </script>
 
 <style lang="scss" scoped>

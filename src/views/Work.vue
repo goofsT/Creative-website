@@ -3,7 +3,7 @@
     <!-- 页面标题 -->
     <section class="page-header">
       <div class="container">
-        <h1>我们的<span>茶品</span></h1>
+        <h1 v-html="t('products.title')"></h1>
       </div>
     </section>
     
@@ -16,7 +16,7 @@
             :class="{ active: activeCategory === 'all' }" 
             @click="setCategory('all')"
           >
-            全部
+            {{ t('products.filter.all') }}
           </button>
           <button 
             v-for="category in categories" 
@@ -25,7 +25,7 @@
             :class="{ active: activeCategory === category.id }" 
             @click="setCategory(category.id)"
           >
-            {{ category.name }}
+            {{ t(category.name) }}
           </button>
         </div>
       </div>
@@ -42,12 +42,12 @@
             @click="openProject(project)"
           >
             <div class="project-card__image">
-              <img :src="project.image" :alt="project.title" />
+              <img :src="project.image" :alt="t(project.title)" />
             </div>
             <div class="project-card__overlay">
-              <h3>{{ project.title }}</h3>
-              <p>{{ project.category }}</p>
-              <span class="view-project">查看项目</span>
+              <h3>{{ t(project.title) }}</h3>
+              <p>{{ t(project.category) }}</p>
+              <span class="view-project">{{ t('products.viewProject') }}</span>
             </div>
           </div>
         </div>
@@ -60,51 +60,51 @@
         <button class="project-modal__close" @click="closeProject">&times;</button>
         
         <div class="project-modal__header">
-          <h2>{{ selectedProject.title }}</h2>
-          <p>{{ selectedProject.category }}</p>
+          <h2>{{ t(selectedProject.title) }}</h2>
+          <p>{{ t(selectedProject.category) }}</p>
         </div>
         
         <div class="project-modal__image">
-          <img :src="selectedProject.image" :alt="selectedProject.title" />
+          <img :src="selectedProject.image" :alt="t(selectedProject.title)" />
         </div>
         
         <div class="project-modal__info">
           <div class="project-modal__description">
-            <h3>茶描述</h3>
-            <p>{{ selectedProject.description }}</p>
+            <h3>{{ t('products.modal.description') }}</h3>
+            <p>{{ t(selectedProject.description) }}</p>
           </div>
           
           <div class="project-modal__details">
-            <h3>茶详情</h3>
+            <h3>{{ t('products.modal.details') }}</h3>
             <ul>
-              <li><strong>日期:</strong> {{ selectedProject.date }}</li>
-              <li><strong>标签:</strong> {{ selectedProject.services }}</li>
+              <li><strong>{{ t('products.modal.date') }}:</strong> {{ t(selectedProject.date) }}</li>
+              <li><strong>{{ t('products.modal.tags') }}:</strong> {{ t(selectedProject.services) }}</li>
             </ul>
           </div>
         </div>
         
         <div class="project-modal__gallery" v-if="selectedProject.gallery && selectedProject.gallery.length">
-          <h3>项目画廊</h3>
+          <h3>{{ t('products.modal.gallery') }}</h3>
           <div class="project-modal__gallery-grid">
             <div 
               v-for="(image, index) in selectedProject.gallery" 
               :key="index" 
               class="gallery-item"
             >
-              <img :src="image" :alt="`${selectedProject.title} 图片 ${index + 1}`" />
+              <img :src="image" :alt="`${t(selectedProject.title)} ${t('products.modal.image')} ${index + 1}`" />
             </div>
           </div>
         </div>
-        <div class="project-modal__gallery" v-if="selectedProject.title === '恩施玉露'">
-          <h3>茶文化</h3>
+        <div class="project-modal__gallery" v-if="selectedProject.title === 'products.items.yulu.title'">
+          <h3>{{ t('products.modal.culture') }}</h3>
           <div class="project-modal__gallery-grid">
             <div class="gallery-item">
               <div>
-                恩施玉露是中国绿茶制作传统技艺中，唯一采用蒸汽杀青的绿茶制作技艺。最早的文字记载是公元780年唐代的《茶经》 它是中国乃至世界现存最早、最完整、最全面介绍茶的第一部专著，被誉为茶叶百科全书。 日本在唐代之后，从中国引进茶树，学习茶叶制作技艺，蒸汽杀青的绿茶制作技艺成为日本主要的绿茶茶叶制作技艺， 其主要的绿茶也称为玉露（Gyokuro）。
+                {{ t('products.items.yulu.culture') }}
               </div>
               <div>
                 <img class="w-50px" src="@/assets/images/product/xjp.jpg" alt="">
-                2018年夏天, 习主席邀请印度总理品尝恩施玉露. China President Xi entertained India's PM Modi with Enshi Yulu tea  in 2018
+                {{ t('products.items.yulu.xiStory') }}
               </div>
             </div>
           </div>
@@ -118,6 +118,7 @@
 import { ref, computed, onMounted } from 'vue'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
+import { t } from '@/i18n/index.js'
 import yulu from '@/assets/images/product/yulu.jpg'
 import yulu1 from '@/assets/images/product/yulu1.jpg'
 import yulu2 from '@/assets/images/product/yulu2.jpg'
@@ -139,103 +140,59 @@ gsap.registerPlugin(ScrollTrigger)
 
 // 分类数据
 const categories = ref([
-  { id: 'green', name: '绿茶系列' },
-  { id: 'black', name: '红茶系列' },
-  { id: 'flower', name: '花茶系列' },
-  { id: 'gift', name: '礼盒系列' },
-  { id: 'special', name: '特色茶品' }
+  { id: 'green', name: 'products.categories.green' },
+  { id: 'black', name: 'products.categories.black' },
+  { id: 'flower', name: 'products.categories.flower' },
+  { id: 'gift', name: 'products.categories.gift' },
+  { id: 'special', name: 'products.categories.special' }
 ])
 
 // 项目数据
 const projects = ref([
   {
     id: 1,
-    title: '恩施玉露',
-    category: '绿茶系列',
+    title: 'products.items.yulu.title',
+    category: 'products.categories.green',
     categoryId: 'green',
     image: yulu1,
-    description: '恩施玉露是湖北恩施州的特产名茶，属于绿茶类。产于世界硒都恩施，富含硒元素，具有独特的保健功效。其外形挺直略扁，色泽翠绿，香气清高持久，滋味鲜爽回甘，汤色嫩绿明亮。采用传统工艺精制而成，保留了茶叶的天然营养成分。',
-    date: '2025春茶',
-    services: '高山云雾茶, 富硒绿茶, 一级茶叶',
+    description: 'products.items.yulu.description',
+    date: 'products.items.yulu.date',
+    services: 'products.items.yulu.services',
     gallery: [yulu, yulu1, yulu2]
   },
   {
     id: 2,
-    title: '绿林翠峰',
-    category: '绿茶系列',
+    title: 'products.items.lvlin.title',
+    category: 'products.categories.green',
     categoryId: 'green',
     image: lvlin,
-    description: '富硒绿茶采自恩施海拔1200米以上的高山茶园，土壤富含硒元素，茶叶自然吸收硒元素。经过传统杀青、揉捻、烘干等工艺精制而成。茶叶条索紧结，色泽翠绿，香气高爽，滋味鲜醇，具有绿茶的清香和富硒茶的独特口感。',
-    date: '2025春茶',
-    services: '高山绿茶, 富硒茶, 有机茶',
+    description: 'products.items.lvlin.description',
+    date: 'products.items.lvlin.date',
+    services: 'products.items.lvlin.services',
     gallery: [lvlin,lvlin1,lvlin2]
   },
   {
     id: 3,
-    title: '利川红',
-    category: '红茶系列',
+    title: 'products.items.lichuan.title',
+    category: 'products.categories.black',
     categoryId: 'black',
     image: lichuan,
-    description: '利川红是利川工夫红茶简称，其茶叶原料选用中茶108、鄂茶1号、鄂茶10号、槠叶齐及地方群体种制作。利川产茶历史悠久，19世纪中叶，利川茶农开始为英资买办商人加工出口红茶，1876年随着宜昌被列为对外通商口岸，利川毛坝成为出口宜红工夫红茶的核心产区之一，1951年利川被国家列为宜红工夫红茶的主要产区，利川红茶已有170多年生产加工历史。',
-    date: '2025春茶',
-    services: '红茶, 功夫茶, 利川红',
+    description: 'products.items.lichuan.description',
+    date: 'products.items.lichuan.date',
+    services: 'products.items.lichuan.services',
     gallery: [lichuan, lichuan1, lichuan2]
   },
   {
     id: 4,
-    title: '藤茶',
-    category: '特色茶品',
+    title: 'products.items.tengcha.title',
+    category: 'products.categories.special',
     categoryId: 'special',
     image: tencai,
-    description: '藤茶，学名显齿蛇葡萄，是葡萄科蛇葡萄属显齿蛇葡萄的嫩茎叶，因其茎杆如藤，故称藤茶。藤茶性寒，味甘淡，具有清热解毒、消炎利咽、降脂降压、增强免疫、抗衰老等功效。',
-    date: '2025特级茶',
-    services: '藤茶, 龙须茶, 降脂降压',
+    description: 'products.items.tengcha.description',
+    date: 'products.items.tengcha.date',
+    services: 'products.items.tengcha.services',
     gallery: [tencai, tencai1, tencai2]
-  },
-  // {
-  //   id: 5,
-  //   title: '富硒茶礼盒',
-  //   category: '礼盒系列',
-  //   categoryId: 'gift',
-  //   image: teaImage5,
-  //   description: '富硒茶礼盒包含恩施精选绿茶和红茶，采用高档礼盒包装，是送礼的理想选择。礼盒内含恩施玉露、富硒绿茶和恩施红茶，让收礼者能够品尝到不同种类的恩施富硒茶。每款茶叶都采用独立真空包装，保证茶叶的新鲜度和香气。',
-  //   date: '2025年礼品系列',
-  //   services: '礼品茶, 组合装, 高档包装',
-  //   gallery: [teaImage7, teaImage]
-  // },
-  // {
-  //   id: 6,
-  //   title: '有机富硒茶',
-  //   category: '特色茶品',
-  //   categoryId: 'special',
-  //   image: teaImage6,
-  //   description: '有机富硒茶采用有机种植方式，不使用任何化学肥料和农药，生长在纯净的高山环境中。茶园位于恩施海拔1500米以上的高山地区，远离污染，土壤天然富含硒元素。茶叶经过严格的有机认证，保证了产品的纯净和安全。具有清香持久，滋味鲜爽的特点。',
-  //   date: '2025有机认证茶',
-  //   services: '有机茶, 富硒茶, 生态茶',
-  //   gallery: [teaPlantation, teaLeaves]
-  // },
-  // {
-  //   id: 7,
-  //   title: '腾茶',
-  //   category: '特色茶品',
-  //   categoryId: 'special',
-  //   image: teaImage7,
-  //   description: '富硒老青茶是恩施特有的传统工艺茶，采用恩施高山富硒茶园的茶叶，经过特殊工艺加工而成。茶叶经过轻度发酵，介于绿茶和红茶之间，具有绿茶的清香和红茶的醇厚。滋味独特，回甘持久，汤色橙黄明亮，是恩施茶中的特色品种。',
-  //   date: '2025特色茶',
-  //   services: '传统工艺, 富硒茶, 特色茶品',
-  //   gallery: [teaImage, teaImage4, teaImage5]
-  // },
-  // {
-  //   id: 8,
-  //   title: '高山野生茶',
-  //   category: '特色茶品',
-  //   categoryId: 'special',
-  //   image: cityImage,
-  //   description: '高山野生茶采自恩施深山中自然生长的野生茶树，这些茶树生长在海拔1800米以上的原始森林中，未经人工培育，完全靠天然生长。茶叶中富含多种天然活性物质和微量元素，特别是硒元素含量极高。滋味独特，香气高锐持久，回甘明显，是难得的天然珍品。',
-  //   date: '2025限量版',
-  //   services: '野生茶, 富硒茶, 珍稀茶品',
-  //   gallery: [teaLeaves, teaPlantation]
-  // }
+  }
 ])
 
 const activeCategory = ref('all')
@@ -308,7 +265,7 @@ onMounted(() => {
   height: 40vh;
   min-height: 300px;
   background-color: var(--color-bg);
-  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('@/assets/images/tea/VCG211522801755.png');
+  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('/src/assets/images/tea/VCG211522801789.png');
   background-size: cover;
   background-position: center;
   display: flex;

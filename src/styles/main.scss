@@ -16,6 +16,7 @@
   --color-text-light: #cccccc;
   --color-heading: #ffffff;
   --color-card-bg: rgba(255, 255, 255, 0.05);
+  --transition: all 0.3s ease;
   
   // 暗色主题
   @media (prefers-color-scheme: dark) {

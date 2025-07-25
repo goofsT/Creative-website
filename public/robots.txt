@@ -1,14 +1,14 @@
 # 恩施富硒茶官方网站 Robots.txt
 # 网站地图
-Sitemap: https://www.enshitea.com/sitemap.xml
+Sitemap: https://www.selenium-rich-tea.com/sitemap.xml
 
 # 允许所有搜索引擎爬取大部分内容
 User-agent: *
 Allow: /
 Allow: /about
-Allow: /products/
-Allow: /tea-culture/
-Allow: /news/
+Allow: /work
+Allow: /research
+Allow: /timeline
 Allow: /contact
 Allow: /faq
 Allow: /knowledge/
@@ -19,7 +19,6 @@ Disallow: /private/
 Disallow: /tmp/
 Disallow: /assets/js/
 Disallow: /*.json$
-Disallow: /*.xml$
 Disallow: /*?*sort=
 Disallow: /*?*filter=
 Disallow: /*?*query=
@@ -30,11 +29,26 @@ Crawl-delay: 10
 # 百度爬虫特殊规则
 User-agent: Baiduspider
 Allow: /
+Allow: /research
+Allow: /*.css$
+Disallow: /admin/
+
+# 360搜索爬虫规则
+User-agent: 360Spider
+Allow: /
+Allow: /research
+Disallow: /admin/
+
+# 搜狗爬虫规则
+User-agent: Sogou web spider
+Allow: /
+Allow: /research
 Disallow: /admin/
 
 # Google爬虫特殊规则
 User-agent: Googlebot
 Allow: /
+Allow: /research
 Allow: /*.js$
 Allow: /*.css$
 
@@ -47,6 +61,7 @@ Allow: /public/img/
 # Bing爬虫特殊规则
 User-agent: Bingbot
 Allow: /
+Allow: /research
 
 # 禁止特定爬虫
 User-agent: MJ12bot
